@@ -19,7 +19,7 @@
 
 .wave {
     position: absolute;
-    top: 5rem;
+    top: 40%;
     left: 0;
     width: 200%;
     height: 50%;
@@ -37,7 +37,7 @@
 
 .wave2 {
     position: absolute;
-    top: 5rem;
+    top: 50%;
     left: 0;
     width: 200%;
     height: 50%;
@@ -57,7 +57,7 @@
 
 .wave3 {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 0;
     width: 200%;
     height: 50%;

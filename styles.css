@@ -5,7 +5,50 @@
 
 body {
     background: #121212;
+    height: 200vh;
 }
+
+header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    right: 0;
+    transform: translateX(-50%);
+    background-color: #3c304a;
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+header:hover {
+    background-color: #413650;
+}
+
+nav ul {
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f1c40f;
+}
+
+
 
 .waves {
 	position: relative;

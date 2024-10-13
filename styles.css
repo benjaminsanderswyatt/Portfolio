@@ -16,14 +16,10 @@ body {
 
 .waves {
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	inset: 0;
 	display: block;
 	min-width: 100%;
 	min-height: 70%;
-	margin: auto 0;
 }
 
 .waves > path {

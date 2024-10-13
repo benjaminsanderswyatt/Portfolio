@@ -7,19 +7,12 @@ body {
     background: #121212;
 }
 
-.wave-holder {
-    position: relative;
-    width: 100%;
-    height: 50%;
-    overflow: hidden;
-}
-
 .waves {
-	position: absolute;
+	position: relative;
 	inset: 0;
 	display: block;
-	min-width: 100%;
-	min-height: 70%;
+	width: 100%;
+	height: 50%;
 }
 
 .waves > path {

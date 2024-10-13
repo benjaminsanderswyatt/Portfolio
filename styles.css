@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body {
+    background: #260D34;
+}
+
 .card {
     position: relative;
     width: 100%;

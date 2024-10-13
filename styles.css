@@ -10,6 +10,7 @@ body {
 
 header {
     position: fixed;
+    min-width: fit-content;
     top: 20px;
     left: 50%;
     right: 0;
@@ -35,6 +36,7 @@ nav ul {
 }
 
 nav li {
+    white-space: nowrap;
     margin: 0 15px;
 }
 

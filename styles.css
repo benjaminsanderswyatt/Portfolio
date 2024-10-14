@@ -50,18 +50,39 @@ nav a:hover {
     color: #f1c40f;
 }
 
-.photo {
-    position: relative;
-    width: 10%;
-    height: fit-content;
-    top: 100px;
-    left: 10%;
+
+
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 200px;
+    gap: 25%;
+    margin: 20px;
+    text-align: center;
 }
 
-.photo img {
-    width: 100%;
-    height: 100%;
+.profile-container img {
+    width: 150px;
+    height: auto;
     border-radius: 50%;
+}
+
+.profile-text {
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        
+    }
+
+    .profile-container img {
+        margin-bottom: 10px;
+    }
 }
 
 

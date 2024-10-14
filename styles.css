@@ -50,6 +50,21 @@ nav a:hover {
     color: #f1c40f;
 }
 
+.photo {
+    position: relative;
+    width: 10%;
+    height: fit-content;
+    top: 100px;
+    left: 10%;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+
 
 
 .waves {

@@ -1,0 +1,10 @@
+.projects-container {
+    width: auto;
+    margin: 2%;
+}
+
+.project {
+    height: 200px;
+    width: auto;
+    border-top: white solid 2px;
+}

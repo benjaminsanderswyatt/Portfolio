@@ -1,4 +1,3 @@
-// Get the toggle button and theme link elements
 const toggleButton = document.getElementById('theme-toggle');
 const lightThemeLink = document.getElementById('light-theme-link');
 const darkThemeLink = document.getElementById('dark-theme-link');
@@ -6,21 +5,19 @@ const darkThemeLink = document.getElementById('dark-theme-link');
 // Check for saved user preference in localStorage
 const userPreference = localStorage.getItem('theme');
 
-// Function to switch to light mode
 function enableLightMode() {
-    lightThemeLink.media = 'all';  // Enable light theme
-    darkThemeLink.media = 'not all';  // Disable dark theme
-    localStorage.setItem('theme', 'light');  // Save user preference
+    lightThemeLink.media = 'all';
+    darkThemeLink.media = 'not all';
+    localStorage.setItem('theme', 'light'); 
 }
 
-// Function to switch to dark mode
 function enableDarkMode() {
-    lightThemeLink.media = 'not all';  // Disable light theme
-    darkThemeLink.media = 'all';  // Enable dark theme
-    localStorage.setItem('theme', 'dark');  // Save user preference
+    lightThemeLink.media = 'not all';
+    darkThemeLink.media = 'all';
+    localStorage.setItem('theme', 'dark');
 }
 
-// Function to set the default theme based on system preference
+// Sets theme based on system preference
 function setDefaultTheme() {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         enableDarkMode();
@@ -29,7 +26,7 @@ function setDefaultTheme() {
     }
 }
 
-// Apply user preference if available, otherwise set default theme
+// Checks if user has set a preferance
 if (userPreference === 'light') {
     enableLightMode();
 } else if (userPreference === 'dark') {
@@ -38,7 +35,7 @@ if (userPreference === 'light') {
     setDefaultTheme();
 }
 
-// Event listener for the toggle button
+// Theme toggle listener
 toggleButton.addEventListener('click', () => {
     if (lightThemeLink.media === 'all') {
         enableDarkMode();

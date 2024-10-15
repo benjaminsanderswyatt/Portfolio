@@ -1,3 +1,4 @@
+/* ----- MAIN ----- */
 body {
     background: #121212;
 }
@@ -17,3 +18,19 @@ nav a {
 nav a:hover {
     color: #f1c40f;
 }
+
+
+
+/* ----- OPENER ----- */
+.profile-text {
+    color: white;
+}
+
+
+/* ----- PROJECTS ----- */
+.project {
+    border-top-color: white;
+}
+
+
+/* ----- SKILLS ----- */

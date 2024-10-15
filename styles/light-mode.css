@@ -1,0 +1,20 @@
+body {
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #f1f1f1;
+}
+
+header:hover {
+    background-color: #cdbce4;
+}
+
+
+nav a {
+    color: black;
+}
+
+nav a:hover {
+    color: #f1c40f;
+}

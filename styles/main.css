@@ -4,7 +4,6 @@
 }
 
 body {
-    background: #121212;
     height: 200vh;
 }
 
@@ -15,7 +14,6 @@ header {
     left: 50%;
     right: 0;
     transform: translateX(-50%);
-    background-color: #3c304a;
     padding: 15px 25px;
     border-radius: 25px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -23,9 +21,7 @@ header {
     z-index: 1000;
 }
 
-header:hover {
-    background-color: #413650;
-}
+
 
 nav ul {
     list-style-type:none;
@@ -42,10 +38,5 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: white;
     transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #f1c40f;
 }

@@ -25,7 +25,18 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f5f5f5;
+
+
+    background: linear-gradient(to left,
+    #49596B,
+    #405165,
+    #35475D,
+    #2A3E57,
+    #1E344E,
+    #132944,
+    #061E3B,
+    #061D3A);
+
 }
 
 /* Header & Footer */
@@ -69,6 +80,21 @@ nav a {
 }
 
 
+/* Test */
+#test {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+
+
 
 /* Home */
 #home {
@@ -82,15 +108,7 @@ nav a {
     align-items: center;
     text-align: center;
     padding: 6rem 2rem;
-    padding-top: 200px;
 }
-    
-    #home canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
 
     #home img {
         width: 300px;

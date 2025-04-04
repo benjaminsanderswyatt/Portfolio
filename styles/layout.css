@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar) #fff;
 }
 
 body {
@@ -10,6 +13,17 @@ body {
     color: white;
     overflow-x: hidden;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,6 @@
 :root {
+    --scrollbar: #818A96;
+
     --text: white;
     --text-shadow: #020b1633;
 
@@ -21,6 +23,4 @@
     /* Accent */
     --accent: #ff4d5a;
     
-
-
 }

@@ -24,3 +24,13 @@
     margin-bottom: 1.4rem;
     border-top: 3px solid var(--accent);
 }
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.content.reverse {
+    flex-direction: row-reverse;
+}

@@ -2,8 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 
+    scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar) #fff;
 }
@@ -49,9 +49,10 @@ header {
 }
 
 
-.header_card img {
+.header_card svg {
     height: 100%;
 }
+
 
 .header_card a {
     padding: 5px;
@@ -65,8 +66,18 @@ header {
 
 .header_card.icons a:hover {
     transform: scale(1.05);
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
+
+
+.header_card.icons a svg {
+    color: var(--text);
+}
+
+.header_card.icons a:hover svg {
+    color: var(--accent);
+}
+
 
 
 /* Navigation */
@@ -88,8 +99,16 @@ nav a {
     color: var(--text);
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.15s ease-in-out;
 }
 
+nav a:hover {
+    color: var(--text-hover);
+}
+
+nav a.active {
+    color: var(--text-hover);
+}
 
 @media screen and (max-width: 768px) {
     header {

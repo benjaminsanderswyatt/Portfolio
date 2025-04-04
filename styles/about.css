@@ -1,28 +1,134 @@
-
-
-
-
-#about .profile-image {
+#about {
     position: relative;
-    width: 100%;
-    height: auto;
-}
-
-#about .profile-image img:first-child {
-    width: 100%;
-    height: auto;
-    z-index: 1;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: var(--about-bg);
 }
 
 
-#about .profile-image img.profile {
-    width: 70%;
-    height: auto;
-    border-radius: 2rem;
+#about .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    z-index: 10;
+    align-items: end;
+    justify-content: center;
+    text-align: end;
+}
+
+
+#about h1 {
+    white-space: nowrap;
+    font-size: clamp(3rem, 5vw, 10rem);
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+
+
+
+
+
+
+#about h2 {
+    font-size: clamp(2rem, 3vw, 4rem);
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: var(--text);
+}
+
+#about .profile-holder {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+    align-items: center;
+    width: 80%;
+}
+
+
+#about .profile {
+    border-radius: 16%;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+#about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+
+#about .earth {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 10%;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    z-index: 0;
 }
+
+#about .earth img {
+    height: 80vh;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    #about {
+        flex-direction: column;
+        height: 100vh;
+    }
+  
+    
+    #about .earth {
+        order: 1;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        align-self: center;
+        height: fit-content;
+        max-height: 65%;
+        width: fit-content;
+    }
+
+    #about .earth img {
+        max-width: 60vw;
+        height: auto;
+        order: 1;
+    }
+        
+
+    
+    #about .container {
+        order: 2;
+        position: relative;
+        align-self: center;
+        justify-items: center;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    #about .profile-holder {
+        width: 100%;
+    }
+
+    #about .profile {
+        width: 200px;
+        height: 200px;
+    }
+}
+

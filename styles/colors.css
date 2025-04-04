@@ -1,0 +1,26 @@
+:root {
+    --text: white;
+    --text-shadow: #020b1633;
+
+
+    /* Gradient background */
+    --gradient-0: #072142;
+    --gradient-1: #061c37;
+    --gradient-2: #07182b;
+    --gradient-3: #061220;
+    --gradient-4: #020b16;
+
+    /* Background */
+    --about-bg: #020b16;
+
+    
+    /* Header */
+    --header-bg: #384b61;
+
+
+    /* Accent */
+    --accent: #ff4d5a;
+    
+
+
+}

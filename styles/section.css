@@ -1,0 +1,26 @@
+.section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: var(--about-bg);
+    padding: 0px 40px;
+}
+
+.section-container {
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.section-container span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    background: var(--accent);
+    margin-bottom: 1.4rem;
+    border-top: 3px solid var(--accent);
+}

@@ -4,11 +4,11 @@
     height: 100vh;
     display: flex;
     background-image: linear-gradient(to bottom,
-    #072142,
-    #061c37,
-    #07182b,
-    #061220,
-    #020b16
+        var(--gradient-0),
+        var(--gradient-1),
+        var(--gradient-2),
+        var(--gradient-3),
+        var(--gradient-4)
     );
     padding: 0px 40px;
 }
@@ -23,7 +23,7 @@
 
 #home .container .title {
     white-space: nowrap;
-    text-shadow: 0 10px 15px rgba(2, 11, 22, 0.2);
+    text-shadow: 0 10px 15px var(--text-shadow);
 }
 
 #home .container .title span {
@@ -31,7 +31,7 @@
     width: 50%;
     height: 6px;
     border-radius: 5px;
-    background: #ff4d5a;
+    background: var(--accent);
     margin-bottom: 1.4rem;
 }
 
@@ -54,7 +54,7 @@
     letter-spacing: 0.05em;
     font-size: 3.5rem;
     font-size: clamp(3.5rem, 6vw, 11rem);
-    color: #ff4d5a;
+    color: var(--accent);
 }
 
 

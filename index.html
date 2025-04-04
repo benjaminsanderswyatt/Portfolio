@@ -3,114 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/style.css">
-
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <title>Ben Sanders-Wyatt | Portfolio</title>
 </head>
 <body>
 
-    <header>
-        <h1>Ben</h1>
-        <nav>
-            <ul>
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Navigation -->
+  <header>
+    <div class="header_card icons">
+      <a class="logo" href="#home">
+        <img src="./assets/BSW.svg" alt="BSW logo">
+      </a>
+      <a href="https://github.com/benjaminsanderswyatt" target="_blank" rel="noopener" style="text-decoration: none;">
+        <img src="./assets/icons/github.svg" alt="Github link">
+      </a>
+      <a href="https://www.linkedin.com/in/ben-sanders-wyatt-44917a268" target="_blank" rel="noopener" style="text-decoration: none;">
+        <img src="./assets/icons/linkedin.svg" alt="Linkedin link">
+      </a>
+    </div>
+    
+    <div class="header_card">
+      <nav>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  
+  </header>
 
 
-    <div class="moon">
-        <div class="moon__img" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;">
-          <div class="moon__front layer" data-depth="0.2" style="transform: translate3d(-4.7px, 4.4px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
-            <div class="moon__text-wrap">
-              <p class="moon__text" data-depth="0.5" style="opacity: 1; transform: translateX(0%) translateZ(0px);">Benjamin Sanders-Wyatt</p>
-            </div>
-          </div>
-          <div class="moon__front layer" data-depth="0.8" style="transform: translate3d(-18.8px, 17.7px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
-            <div class="cloud cloud--front1" style="opacity: 1; transform: translateX(0%) translateZ(0px);"><img src="./assets/img/cloud1.svg" alt="cloud"></div>
-          </div>
-          <div class="moon__back layer" data-depth="0.4" style="transform: translate3d(-9.4px, 8.8px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
-            <div class="cloud cloud--back2" style="opacity: 1; transform: translateX(0%) translateZ(0px);"><img src="./assets/img/b_cloud02.svg" alt="cloud"></div>
-          </div>
-          <div class="moon__front layer" data-depth="0.6" style="transform: translate3d(-14.1px, 13.3px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
-            <div class="cloud cloud--front2" style="opacity: 1; transform: translateX(0%) translateZ(0px);"><img src="./assets/img/cloud2.svg" alt="cloud"></div>
-          </div>
-          <div class="moon__back layer" data-depth="0.5" style="transform: translate3d(-11.8px, 11px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"><img class="js-moon" src="./assets/img/moon.svg" alt="moon" style="opacity: 1; transform: translateX(0%) translateZ(0px);"></div>
-          <div class="moon__front layer" data-depth="0.7" style="transform: translate3d(-16.5px, 15.5px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
-            <div class="cloud cloud--front3" style="opacity: 1; transform: translateX(0%) translateZ(0px);"><img src="./assets/img/cloud3.svg" alt="cloud"></div>
-          </div>
-          <div class="moon__back layer" data-depth="0.3" style="transform: translate3d(-7.1px, 6.6px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
-            <div class="cloud cloud--back1" style="opacity: 1; transform: translateX(0%) translateZ(0px);"><img src="./assets/img/b_cloud01.svg" alt="cloud"></div>
-          </div>
+  <!-- Home Section -->
+  <section id="home">
+    <div class="container">
+      <div class="title">
+        <h1>Benjamin</h1>
+        <h2>Sanders-Wyatt</h2>
+  
+        <div class="dividers">
+          <span class="divider"></span>
+          <span class="divider"></span>
         </div>
+  
+        <h3>Portfolio</h3>
+    
       </div>
+    </div>
 
-    <section id="test">
-        <h1>Hello</h1>
-
-        
-
-    </section>
-
-
-
-
-    <section id="home">
-        <img src="assets/face.jpg" alt="Profile Picture">
-
-        <div className="col">
-            <h1>Benjamin Sanders-Wyatt</h1>
-            <p>Computer Science Student/Professional</p>
-            <h3>
-                <span class="multiple-text"></span>
-            </h3>
-        </div>
-        
-
-    </section>
+    
+    <div class="moon">
+      <img src="./assets/moon_img.svg" alt="moon">
+    </div>
+  </section>
 
 
 
-    <section id="about">
-        <h2>About Me</h2>
-    </section>
+  <section id="about">
+    <h1 style="height: 100vh; border-bottom: 2px solid black">Hello</h1>
+  </section>
 
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="project-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <h3>Project Title 1</h3>
-                <p>Project description and technologies used.</p>
-                <a href="#">View Project</a>
-            </div>
+  <section id="projects">
+    <h1 style="height: 100vh; border-bottom: 2px solid black">Hello</h1>
+  </section>  
+  
+  <section id="skills">
+    <h1 style="height: 100vh; border-bottom: 2px solid black">Hello</h1>
+  </section>
 
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-container">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">JavaScript</span>
-        </div>
-    </section>
+  <section id="contact">
+    <h1 style="height: 100vh; border-bottom: 2px solid black">Hello</h1>
+  </section>
 
 
-    <footer>
-        <p>Connect with me:</p>
-        <p>2023 Benjamin Sanders-Wyatt</p>
-    </footer>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="script.js"></script>
+  <!--<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>-->
+  <script src="script.js"></script>
 </body>
 </html>

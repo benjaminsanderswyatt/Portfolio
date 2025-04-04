@@ -10,7 +10,8 @@
 
 body {
     font-family: 'Century Gothic', 'Montserrat', sans-serif;
-    color: white;
+    color: var(--text);
+    background-color: var(--body-bg);
     overflow-x: hidden;
 }
 

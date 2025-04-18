@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 
     scroll-behavior: smooth;
     scrollbar-width: thin;
@@ -32,8 +33,9 @@ body {
 header {
     z-index: 100;
     position: fixed;
+    top: 0;
     display: flex;
-    width: 100%;
+    width: 100vw;
     color: var(--text);
     justify-content: space-between;
     padding: 10px 20px;
@@ -116,6 +118,18 @@ nav a.active {
         flex-wrap: wrap-reverse;
         flex-direction: row-reverse;
         gap: 10px 200px; /* gap 200 forces flex to wrap*/
+    }
+
+    .header_card {
+        padding: 6px 10px;
+    }
+
+    nav {
+        font-size: 0.9rem;
+    }
+
+    nav ul {
+        gap: 10px;
     }
 }
 

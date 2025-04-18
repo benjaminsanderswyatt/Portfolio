@@ -15,7 +15,7 @@
 
 
 #home .dividers {
-    width: 30%;
+    width: 60%;
     margin: 10px 0px 0px 0px;
 }
 
@@ -49,13 +49,12 @@
 
 #home .container .title h1 {
     letter-spacing: 0.05em;
-    font-size: clamp(4rem, 8vw, 12rem);
+    font-size: clamp(3.5rem, 8vw, 12rem);
 }
 
 #home .container .title h2 {
     letter-spacing: 0.05em;
-    font-size: 3rem;
-    font-size: clamp(3rem, 5vw, 10rem);
+    font-size: clamp(2.7rem, 5vw, 10rem);
 }
 
 #home .container .title h3 {
@@ -84,6 +83,12 @@
     position: relative;
 }
 
+
+@media screen and (max-width: 992px) {
+    #home .moon {
+        left: 20%;
+    }
+}
 
 @media screen and (max-width: 768px) {
     #home {

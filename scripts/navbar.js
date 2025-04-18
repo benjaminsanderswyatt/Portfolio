@@ -1,8 +1,8 @@
 /*
 const typed = new Typed('.multiple-text',{
-    strings:['Person ','Thing '],
-    typeSpeed:100,
-    backSpeed:100,
+    strings:['Developer ','Computer Scientist ', 'Debugger', 'Designer'],
+    typeSpeed:90,
+    backSpeed:80,
     backDelay:1000,
     loop:true
 });

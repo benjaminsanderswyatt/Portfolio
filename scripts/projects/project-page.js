@@ -38,6 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  fetch('https://api.github.com/users/benjaminsanderswyatt/repos')
+  .then(res => res.json())
+  .then(data => {
+    window.repoData = data;
+  })
+  .catch(err => {
+    console.error("Failed to fetch repos:", err);
+    document.getElementById("project-title").textContent = "Failed to load project";
+  });
+
   const waitForRepoData = () => {
     if (window.repoData) {
       const project = window.repoData.find(p => p.name === projectName);

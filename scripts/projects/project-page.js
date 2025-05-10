@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const projectName = urlParams.get("project");
+  const projectName = urlParams.get("repo");
 
   if (!projectName) {
-    document.getElementById("project-title").textContent = "Project not specified.";
+    document.getElementById("project-title").textContent = "Error getting repo";
     return;
   }
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const project = window.repoData.find(p => p.name === projectName);
       if (project) {
         document.getElementById("project-title").textContent = project.name;
-        document.getElementById("project-description").textContent = project.description || "No description provided.";
+        document.getElementById("project-description").textContent = project.description || "No description provided";
         document.getElementById("project-link").href = project.html_url;
 
         // Set banner image
@@ -52,10 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
         banner.src = bannerUrl;
         banner.style.display = 'block';
 
-        // Check that image loads
-        banner.onerror = () => banner.style.display = 'none';
+
+        // If the banner image fails, use fallback
+        banner.onerror = () => {
+          banner.src = '/assets/repos/default.png';
+        };
       } else {
-        document.getElementById("project-title").textContent = "Project not found.";
+        document.getElementById("project-title").textContent = "Project not found";
       }
     } else {
       setTimeout(waitForRepoData, 100);

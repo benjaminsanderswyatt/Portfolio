@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (items.length === 0) 
       return;
 
-
     const firstItem = items[0];
     const itemStyle = getComputedStyle(firstItem);
     const itemWidth = firstItem.offsetWidth + parseInt(itemStyle.marginRight);
     const wrapper = document.querySelector('.carousel-wrapper');
+
     const visibleCount = Math.floor(wrapper.offsetWidth / itemWidth);
 
     // Calculate total pages (then shift)
@@ -26,10 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (currentIndex >= totalPages) {
       currentIndex = 0;
     }
-    
+
     const offset = -(currentIndex * itemWidth);
     carouselRow.style.transform = `translateX(${offset}px)`;
-    
+
     // Update the dot
     const dots = document.querySelectorAll('#carousel-dots .dot');
     dots.forEach((dot, index) => {
@@ -43,38 +43,34 @@ document.addEventListener("DOMContentLoaded", () => {
     autoPlayInterval = setInterval(() => {
       currentIndex++;
       updateCarousel();
-    }, 4000); // every 5 seconds
-
+    }, 4000);  // every 4 seconds
   }
-
-
 
 
   // Create dot indicators based on total pages
   function createDots() {
     const carouselDotsContainer = document.getElementById('carousel-dots');
     carouselDotsContainer.innerHTML = "";
-    
-    const items = document.querySelectorAll('#carousel-repos .repo-item');
 
+    const items = document.querySelectorAll('#carousel-repos .repo-item');
+    
     if (items.length === 0) 
       return;
-    
+
     const firstItem = items[0];
     const itemStyle = getComputedStyle(firstItem);
     const itemWidth = firstItem.offsetWidth + parseInt(itemStyle.marginRight);
     const wrapper = document.querySelector('.carousel-wrapper');
     const visibleCount = Math.floor(wrapper.offsetWidth / itemWidth);
     const totalPages = items.length - visibleCount + 1;
-    
+
     for (let i = 0; i < totalPages; i++) {
       const dot = document.createElement('div');
       dot.classList.add('dot');
-
       if (i === currentIndex) {
         dot.classList.add('active');
       }
-      
+
       // Handle clicking on dot
       dot.addEventListener('click', () => {
         clearInterval(autoPlayInterval);
@@ -87,11 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
   }
-
-
-
-
-
 
 
 
@@ -113,13 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Get repos from api
       const response = await fetch('https://api.github.com/users/benjaminsanderswyatt/repos');
-      if (!response.ok) {
+      if (!response.ok) 
         throw new Error(`Network response was not ok: ${response.statusText}`);
-      }
 
       let repos = await response.json();
       repos = repos.filter(repo => !ignoredRepos.includes(repo.name));
-
+      
       // Separate repos (for pinned)
       const pinnedRepos = repos.filter(repo => pinnedOrder.includes(repo.name));
       pinnedRepos.sort((a, b) => pinnedOrder.indexOf(a.name) - pinnedOrder.indexOf(b.name));
@@ -141,7 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
           window.open(repo.html_url, '_blank');
         });
 
-
         // Pause carousel on hover
         repoItem.addEventListener('mouseenter', () => {
           clearInterval(autoPlayInterval);
@@ -161,11 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
         repoImage.classList.add('repo-image');
 
         // Fallback image if the repo image fails
-        repoImage.onerror = function() {
+        repoImage.onerror = function () {
           this.src = './assets/repos/default.png';
         };
         repoItem.appendChild(repoImage);
-
 
         const repoName = document.createElement('h2');
         repoName.textContent = repo.name;
@@ -191,11 +179,12 @@ document.addEventListener("DOMContentLoaded", () => {
         carouselContainer.appendChild(createRepoItem(repo));
       });
 
+
       // Init dots and auto play
       createDots();
       updateCarousel(); // Update initially so active dot is set
       startAutoPlay();
-      
+
       // Handle dots and carousel on window resizing
       window.addEventListener('resize', () => {
         updateCarousel();
@@ -205,7 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       console.error('Error fetching repositories:', error);
 
-      // UI error message
       document.getElementById('pinned-repos').textContent = 'Failed to load pinned projects. Please try again later.';
       document.getElementById('carousel-repos').textContent = 'Failed to load projects. Please try again later.';
     }
@@ -214,3 +202,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Call the function to load repos
   loadGithubRepos();
 });
+
+

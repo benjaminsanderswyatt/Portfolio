@@ -7,54 +7,23 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
+    
     gtag('config', 'G-KNTE32LKC9');
   </script>
 
 
-  <!-- Metadata -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Details</title>
+  <link rel="stylesheet" href="styles/colors.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/projects/project-page.css" />
   
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="./assets/fav/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="./assets/fav/favicon.svg" />
-  <link rel="shortcut icon" href="./assets/fav/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/fav/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Portfolio" />
-  <link rel="manifest" href="./assets/fav/site.webmanifest" />
-
-
-  <meta name="description" content="Benjamin Sanders-Wyatt's Portfolio website featuring projects, experience, and contact information.">
-  <!-- Open Graph Metadata -->
-  <meta property="og:title" content="Benjamin Sanders-Wyatt | Portfolio" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://bsanderswyatt.com" />
-  <meta property="og:image" content="https://bsanderswyatt.com/assets/fav/portfolio.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:typ" content="image/png" />
-  <meta property="og:description" content="Welcome to my portfolio!" />
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/colors.css">
-  <link rel="stylesheet" href="styles/background.css">
-  <link rel="stylesheet" href="styles/layout.css">
-  <link rel="stylesheet" href="styles/section.css">
-  <link rel="stylesheet" href="styles/home.css">
-  <link rel="stylesheet" href="styles/about.css">
-  <link rel="stylesheet" href="styles/projects.css">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  
-  <title>Ben Sanders-Wyatt | Portfolio</title>
 </head>
+
 <body>
 
-
-
-  <!-- Navigation -->
+<!-- Navigation -->
   <header>
     <div class="header_card icons">
       <a class="logo" href="#home" aria-label="Ben Sanders-Wyatt logo">
@@ -85,11 +54,11 @@
     <div class="header_card">
       <nav>
         <ul>
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects" class="active">Projects</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -97,128 +66,29 @@
   </header>
 
 
-
-
-  <!-- Home Section -->
-  <section id="home">
-    <div class="holder">
-      <div class="title">
-        <h1>Benjamin</h1>
-        <h2>Sanders-Wyatt Hello</h2>
-  
-
-
-        <img class="dividers" src="./assets/background/lines.svg" alt="backround lines">
-
-        <h3>Portfolio</h3>
+  <!-- Page Content-->
+  <div class="project-container">
     
-      </div>
+    <div class="banner-wrapper">
+      <img id="banner-image" class="banner" src="" alt="Project banner" style="display: none;" />
     </div>
 
+
+    <div class="content">
+      <h1 id="project-title">Loading...</h1>
+
+      <p id="project-description"></p>
     
-    <div class="moon">
-      <img src="./assets/moon_img.svg" alt="moon" loading="lazy">
-    </div>
-  </section>
+      <a id="project-link" href="#" target="_blank">View on GitHub</a>
 
 
-
-<!-- About Section -->
-<section id="about">
-  <div class="container about-grid">
-    
-    <div class="about-text">
-      <h1 class="about-heading">- About Me -</h1>
-      <h2 class="about-subheading">Computer Scientist & Developer</h2>
-      <p>Some details about me...</p>
-      <p>First Class graduate from University of Plymouth...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
     </div>
 
-    <div class="about-image">
-      <img class="profile" src="./assets/profile.jpg" alt="Profile picture of Benjamin Sanders-Wyatt">
-    </div>
+    <a class="back-link" href="index.html#projects">← Back to Portfolio</a>
 
   </div>
-</section>
 
-
-
-
-
-
-
-
-
-
-
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="section-container">
-      <div class="content">
-        <!-- Pinned Repos Row (Static) -->
-        <div id="pinned-repos" class="repos-row static-row"></div>
-        
-        <!-- Carousel for Non Pinned Repos -->
-        <div class="carousel-container">
-          <div class="carousel-wrapper">
-            <div id="carousel-repos" class="repos-row carousel-row"></div>
-          </div>
-          <!-- Dot indicators -->
-          <div id="carousel-dots" class="carousel-dots"></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-  <!-- Skills Section -->
-  <section id="skills">
-    <div class="section-container">
-      <div class="content reverse">
-        <h1>Skills</h1>
-        
-      </div>
-      <span></span>
-    </div>
-  </section>
-
-
-
-    <!-- Contact Section -->
-  <section id="contact">
-    <div class="section-container">
-      <div class="content">
-        <h1>Contact</h1>
-
-
-
-
-      </div>
-      <span></span>
-      
-    </div>
-  </section>
-
-
-
-
-
-  <!--<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>-->
-  <script src="./scripts/navbar.js"></script>
-  <script src="./scripts/gitrepos.js"></script>
-
-
+  <script src="scripts/gitrepos.js"></script>
+  <script src="scripts/projects/project-page.js"></script>
 </body>
 </html>

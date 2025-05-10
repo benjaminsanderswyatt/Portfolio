@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectName = urlParams.get("repo");
 
   // Get page elements
+  const projectContainer = document.querySelector('.project-container');
   const projectLink = document.getElementById("project-link");
   const projectTitle = document.getElementById("project-title");
   const projectDesc = document.getElementById("project-description");
@@ -66,14 +67,15 @@ document.addEventListener("DOMContentLoaded", () => {
         banner.style.display = "block";
 
         banner.onerror = () => {
-          banner.src = '/assets/repos/default.png';
+          banner.style.display = 'none';
+          projectContainer.classList.add("full-height");
         };
 
       } else {
         projectTitle.textContent = "Project not found";
         projectLink.style.display = "none";
       }
-      
+
     })
     .catch(err => {
       console.error("Failed to fetch repos:", err);

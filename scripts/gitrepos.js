@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
         repoItem.style.cursor = "pointer";
 
         repoItem.addEventListener('click', () => {
-          window.open(repo.html_url, '_blank');
+          window.location.href = `project?repo=${encodeURIComponent(repo.name)}`;
         });
 
         // Pause carousel on hover

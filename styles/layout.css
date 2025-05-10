@@ -3,10 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     
-
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar) #fff;
+}
+
+html, body {
+    height: 100%;
+    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -14,10 +18,8 @@ body {
     color: var(--text);
     background-color: var(--body-bg);
     overflow-x: hidden;
+    overscroll-behavior-y: none;
 }
-
-
-
 
 
 
@@ -105,10 +107,7 @@ nav a {
     transition: color 0.15s ease-in-out;
 }
 
-nav a:hover {
-    color: var(--text-hover);
-}
-
+nav a:hover,
 nav a.active {
     color: var(--text-hover);
 }

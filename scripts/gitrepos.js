@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     autoPlayInterval = setInterval(() => {
       currentIndex++;
       updateCarousel();
-    }, 5000); // every 5 seconds
+    }, 4000); // every 5 seconds
 
   }
 

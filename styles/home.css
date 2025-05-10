@@ -1,17 +1,5 @@
 
-#home {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    background-image: linear-gradient(to bottom,
-        var(--gradient-0),
-        var(--gradient-1),
-        var(--gradient-2),
-        var(--gradient-3),
-        var(--gradient-4)
-    );
-    padding: 0px 40px;
-}
+
 
 
 #home .dividers {
@@ -22,19 +10,19 @@
 
 
 
-#home .container {
+#home .holder {
     justify-content: space-around;
     align-items: center;
     position: relative;
     display: flex;
 }
 
-#home .container .title {
+#home .holder .title {
     white-space: nowrap;
     text-shadow: 0 10px 15px var(--text-shadow);
 }
 
-#home .container .title span {
+#home .holder .title span {
     display: block;
     width: 50%;
     height: 6px;
@@ -43,21 +31,21 @@
     margin-bottom: 1.4rem;
 }
 
-#home .container .title span:last-child {
+#home .holder .title span:last-child {
     margin-left: 30%;
 }
 
-#home .container .title h1 {
+#home .holder .title h1 {
     letter-spacing: 0.05em;
     font-size: clamp(3.5rem, 8vw, 12rem);
 }
 
-#home .container .title h2 {
+#home .holder .title h2 {
     letter-spacing: 0.05em;
     font-size: clamp(2.7rem, 5vw, 10rem);
 }
 
-#home .container .title h3 {
+#home .holder .title h3 {
     letter-spacing: 0.05em;
     font-size: 3.5rem;
     font-size: clamp(3.5rem, 6vw, 11rem);

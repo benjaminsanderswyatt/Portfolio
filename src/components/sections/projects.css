@@ -1,0 +1,9 @@
+.transition-item {
+    display: block;
+    height: auto;
+    width: 100%;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}

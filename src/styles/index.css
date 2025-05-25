@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  
 }
 
 body {
@@ -14,62 +15,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* Default Light Theme */
+/* Default Theme */
 :root {
-  --scrollbar: #818A96;
 
-  /*--text: white;*/
-  --text: green;
-  --text-hover: #ff4d5a;
-  --text-shadow: #020b1633;
+  --text: white;
+  --moon-text: #252353;   /* 3a247b */
 
 
-  /* Gradient background */
-  --gradient-0: #072142;
-  --gradient-1: #061c37;
-  --gradient-2: #07182b;
-  --gradient-3: #061220;
-  --gradient-4: #020b16;
 
-  /* Background */
-  --body-bg: #020b16;
-  --about-bg: #020b16;
-
-  
-  /* Header */
-  --header-bg: #384b61;
+  /* Cursor trail */
+  --trail-1: #a5b4fc;
+  --trail-2: #93c5fd;
+  --trail-3: #c4b5fd;
+  --trail-4: #bfdbfe;
+  --trail-5: #e0e7ff;
+  --trail-6: #dbeafe;
 
 
-  /* Accent */
-  --accent: #ff4d5a;
-}
-
-/* Dark Theme */
-[data-theme="dark"] {
-  --scrollbar: #818A96;
-
-  /*--text: white;*/
-  --text: green;
-  --text-hover: #ff4d5a;
-  --text-shadow: #020b1633;
+  /* Background colour gradient */
+  --bg-color-1: #0b0c2a;
+  --bg-color-2: #1f1b45;
+  --bg-color-3: #2b2a60;
+  --bg-color-4: #1a1a3d;
 
 
-  /* Gradient background */
-  --gradient-0: #072142;
-  --gradient-1: #061c37;
-  --gradient-2: #07182b;
-  --gradient-3: #061220;
-  --gradient-4: #020b16;
-
-  /* Background */
-  --body-bg: #020b16;
-  --about-bg: #020b16;
-
-  
-  /* Header */
-  --header-bg: #384b61;
+  /* Background elements */
+  --star: white;
 
 
-  /* Accent */
-  --accent: #ff4d5a;
+
+  --header-rgb: 2, 11, 22;
+  --header-transition: 0.3s ease;
+
+  --border: #5c5c5c;
+  --border-rgb: 92, 92, 92;
+
+  --navbar-item-hover: rgba(255, 255, 255, 0.1);
+  --navbar-selected: rgba(255, 255, 255, 0.15);
+
+
 }

@@ -1,0 +1,171 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router';
+
+import './header.css';
+
+const CONFIG = {
+  MAX_HEADER_OPACITY: 0.6, // Opacity of header (after hero)
+  NAV_ITEMS: [ // Navbar items links to page sections
+    { id: 'hero', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact' },
+  ],
+  SCROLL_OFFSET_FACTOR: 0.5, // Trigger point for activating section
+};
+
+
+
+const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const menuRef = useRef(null);
+
+  const [menuOpen, setMenuOpen] = useState(false); // Small screen menu toggle
+  const [opacity, setOpacity] = useState(0); // Transparency for header
+  const [activeSection, setActiveSection] = useState(CONFIG.NAV_ITEMS[0].id);
+
+
+  useEffect(() => {
+    // Get all of the sections
+    const sectionOffsets = CONFIG.NAV_ITEMS.map(item => {
+      const sect = document.getElementById(item.id);
+      return sect ? { id: item.id, offsetTop: sect.offsetTop } : null;
+    }).filter(Boolean);
+
+
+    const onScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight / 2;
+      let current = CONFIG.NAV_ITEMS[0].id;
+
+      // Update active section based on scroll
+      for (const section of sectionOffsets) {
+        if (scrollPos >= section.offsetTop) {
+          current = section.id;
+        }
+      }
+      setActiveSection(current);
+    };
+
+
+    window.addEventListener('scroll', onScroll);
+    onScroll(); // Initialize
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+
+  // Change header transparency based on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const maxScroll = window.innerHeight;
+      setOpacity(Math.min(scrollY / maxScroll, 1) * CONFIG.MAX_HEADER_OPACITY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
+  // Close burger menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [menuOpen]);
+
+
+  // Get css variables for header colours
+  const rgb =
+    getComputedStyle(document.documentElement).getPropertyValue('--header-rgb') || '255, 255, 255';
+  const borderRgb =
+    getComputedStyle(document.documentElement).getPropertyValue('--border-rgb') || '0, 0, 0';
+
+
+  // Scroll to the section
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Navigate to the section
+  const handleSectionNavigation = (sectionId) => {
+    if (location.pathname !== '/') { // Home page
+      navigate('/');
+      setTimeout(() => scrollToSection(sectionId), 100);
+    } else {
+      scrollToSection(sectionId);
+    }
+    setMenuOpen(false); // Close menu after item clicked
+  };
+
+
+  return (
+    <header
+      className="header"
+      style={{
+        backgroundColor: `rgba(${rgb}, ${menuOpen ? CONFIG.MAX_HEADER_OPACITY : opacity})`,
+        backdropFilter: (menuOpen || opacity > 0) ? 'blur(10px)' : 'none',
+        boxShadow: (menuOpen || opacity > 0.1) ? '0 2px 10px rgba(0,0,0,0.1)' : 'none',
+        borderBottom: `1px solid rgba(${borderRgb}, ${menuOpen ? 0.3 : opacity})`,
+      }}
+    >
+
+      <div className="social-links">
+        {/* <img src="/images/BSW.svg" alt="Logo" className="logo" onClick={() => navigate('/')} /> */}
+        <a
+          href="https://www.linkedin.com/in/ben-sanders-wyatt"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/images/linkedin.svg" alt="LinkedIn" className="social-icon" />
+        </a>
+        <a
+          href="https://github.com/benjaminsanderswyatt"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/images/github.svg" alt="GitHub" className="social-icon" />
+        </a>
+      </div>
+
+
+      <div className="nav-container" ref={menuRef}>
+        <button
+          className={`nav-menu-button ${menuOpen ? 'active' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <img
+            src="/images/icons/burger.svg"
+            alt={menuOpen ? 'Close menu' : 'Menu'}
+            className="nav-burger-icon"
+          />
+        </button>
+
+        <nav className={`nav-menu ${menuOpen ? 'open' : ''}`}>
+          {CONFIG.NAV_ITEMS.map((item) => (
+            <button
+              key={item.id}
+              className={`nav-item ${activeSection === item.id ? 'selected' : ''}`}
+              onClick={() => handleSectionNavigation(item.id)}
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
+      </div>
+
+      
+    </header>
+  );
+};
+
+export default Header;

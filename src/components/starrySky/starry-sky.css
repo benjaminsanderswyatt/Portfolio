@@ -1,0 +1,25 @@
+#sky {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.star {
+  fill: white;
+  opacity: 0;
+  animation-name: twinkle;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+}
+
+@keyframes twinkle {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+

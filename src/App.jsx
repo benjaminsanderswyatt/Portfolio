@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router";
 import { ParallaxProvider } from 'react-scroll-parallax';
-
+import { pageview } from './utils/gtag';
 
 import CursorTrail from './components/cursor/CursorTrail';
 
@@ -42,5 +42,17 @@ function App() {
     </ParallaxProvider>
   );
 }
+
+
+function RouteChangeTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    pageview(location.pathname + location.search);
+  }, [location]);
+
+  return null;
+}
+
 
 export default App;

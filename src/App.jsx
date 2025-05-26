@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { useGoogleAnalytics, GA_TRACKING_ID } from './hooks/useGoogleAnalytics';
 
-import CursorTrail from './components/cursor/CursorTrail';
+// import CursorTrail from './components/cursor/CursorTrail';
 
 import Layout from './pages/Layout';
 import NoPage from './pages/NoPage';
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <ParallaxProvider>
-      <CursorTrail />
+      {/* <CursorTrail /> */}
 
       <BrowserRouter>
 

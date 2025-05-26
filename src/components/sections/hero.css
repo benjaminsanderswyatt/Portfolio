@@ -32,6 +32,9 @@
   width: 100%;
   height: auto;
   z-index: 1;
+  will-change: transform;
+  transform-style: preserve-3d ;
+  transform: translateZ(0);
 }
 
 .svg-item img {
@@ -62,6 +65,7 @@
 
 .layer-moon img {
   /*width: 40vw;*/
+  max-height: 70vh;
 }
 
 
@@ -78,16 +82,15 @@
 }
 
 
-
 @media (max-width: 600px) {
   .layer-moon img {
     width: 75vw;
-    margin-bottom: 20vh;
+    margin-bottom: 30vh;
   }
 
   .layer-moon h1 {
     font-size: 8vw;
-    margin-bottom: 20vh;
+    margin-bottom: 30vh;
   }
 }
 
@@ -106,37 +109,38 @@
 @media (min-width: 768px) {
   .layer-moon img {
     width: 60vw;
-    margin-bottom: 10vh;
+    margin-bottom: 20vh;
   }
 
   .layer-moon h1 {
     font-size: 6vw;
-    margin-bottom: 10vh;
+    margin-bottom: 20vh;
   }
 }
 
 @media (min-width: 992px) {
   .layer-moon img {
     width: 55vw;
-    margin-bottom: 0;
+    margin-bottom: 15vh;
   }
 
   .layer-moon h1 {
     font-size: 6vw;
-    margin-bottom: 0;
+    margin-bottom: 15vh;
   }
 }
 
 @media (min-width: 1200px) {
   .layer-moon img {
     width: 40vw;
+    margin-bottom: 10vh;
   }
 
   .layer-moon h1 {
-    font-size: 4.5vw;
+    font-size: min(4.5vw, 5.5rem);
+    margin-bottom: 10vh;
   }
 }
-
 
 
 

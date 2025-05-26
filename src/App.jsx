@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import { ParallaxProvider } from 'react-scroll-parallax';
-import { pageview } from './utils/gtag';
+import { useGoogleAnalytics, GA_TRACKING_ID } from './hooks/useGoogleAnalytics';
 
 import CursorTrail from './components/cursor/CursorTrail';
 
@@ -17,6 +17,8 @@ import './styles/App.css';
 
 
 function App() {
+  // Initialise google analytics
+  useGoogleAnalytics();
 
   return (
     <ParallaxProvider>
@@ -47,11 +49,16 @@ function App() {
 }
 
 
+// Component to track route changes
 function RouteChangeTracker() {
   const location = useLocation();
 
   useEffect(() => {
-    pageview(location.pathname + location.search);
+    if (window.gtag && typeof window.gtag === 'function') {
+      window.gtag('config', GA_TRACKING_ID, {
+        page_path: location.pathname + location.search,
+      });
+    }
   }, [location]);
 
   return null;

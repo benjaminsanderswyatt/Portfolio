@@ -35,11 +35,17 @@ const Header = () => {
     }).filter(Boolean);
 
 
-    const onScroll = () => {
-      const scrollPos = window.scrollY + window.innerHeight / 2;
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const maxScroll = window.innerHeight;
+
+      // Change header transparency based on scroll
+      setOpacity(Math.min(scrollY / maxScroll, 1) * CONFIG.MAX_HEADER_OPACITY);
+
+      // Find active section based on scroll position
+      const scrollPos = scrollY + window.innerHeight / 2;
       let current = CONFIG.NAV_ITEMS[0].id;
 
-      // Update active section based on scroll
       for (const section of sectionOffsets) {
         if (scrollPos >= section.offsetTop) {
           current = section.id;
@@ -48,24 +54,13 @@ const Header = () => {
       setActiveSection(current);
     };
 
-
-    window.addEventListener('scroll', onScroll);
-    onScroll(); // Initialize
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-
-  // Change header transparency based on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const maxScroll = window.innerHeight;
-      setOpacity(Math.min(scrollY / maxScroll, 1) * CONFIG.MAX_HEADER_OPACITY);
-    };
-
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initialize
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+
 
 
   // Close burger menu when clicking outside
@@ -93,7 +88,8 @@ const Header = () => {
   // Scroll to the section
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
-    if (section) section.scrollIntoView({ behavior: 'smooth' });
+    if (section) 
+      section.scrollIntoView({ behavior: 'smooth' });
   };
 
   // Navigate to the section
@@ -112,7 +108,7 @@ const Header = () => {
       className="header"
       style={{
         backgroundColor: `rgba(${rgb}, ${menuOpen ? CONFIG.MAX_HEADER_OPACITY : opacity})`,
-        backdropFilter: (menuOpen || opacity > 0) ? 'blur(10px)' : 'none',
+        backdropFilter: menuOpen ? 'blur(10px)' : `blur(${opacity / CONFIG.MAX_HEADER_OPACITY * 10}px)`,
         boxShadow: (menuOpen || opacity > 0.1) ? '0 2px 10px rgba(0,0,0,0.1)' : 'none',
         borderBottom: `1px solid rgba(${borderRgb}, ${menuOpen ? 0.3 : opacity})`,
       }}

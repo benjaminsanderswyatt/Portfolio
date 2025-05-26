@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router';
 
 
 import StarrySky from '../components/starrySky/StarrySky';
@@ -11,6 +12,21 @@ import Contact from '../components/sections/Contact';
 import './home.css';
 
 const Home = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const sectionId = location.state.scrollTo;
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+      
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, [location]);
+
+
   return (
     <>
       <StarrySky />

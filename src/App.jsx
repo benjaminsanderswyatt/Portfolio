@@ -26,6 +26,7 @@ function App() {
 
       <BrowserRouter>
 
+        {/* Component to track page route changes */}
         <RouteChangeTracker />
 
         <Routes>
@@ -49,7 +50,7 @@ function App() {
 }
 
 
-// Component to track route changes
+// Component to track route changes for google analytics
 function RouteChangeTracker() {
   const location = useLocation();
 

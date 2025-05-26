@@ -27,6 +27,7 @@
 
 .social-icon {
   height: 40px;
+  width: auto;
   transition: transform 200ms ease;
   cursor: pointer;
 }

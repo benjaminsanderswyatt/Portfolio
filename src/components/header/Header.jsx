@@ -99,8 +99,7 @@ const Header = () => {
   // Navigate to the section
   const handleSectionNavigation = (sectionId) => {
     if (location.pathname !== '/') { // Home page
-      navigate('/');
-      setTimeout(() => scrollToSection(sectionId), 100);
+      navigate('/', { state: { scrollTo: sectionId } });
     } else {
       scrollToSection(sectionId);
     }
@@ -144,8 +143,8 @@ const Header = () => {
             src="/images/github.svg" 
             alt="GitHub" 
             className="social-icon" 
-            width={150} 
-            height={150} 
+            width={128} 
+            height={128} 
             loading="lazy"
           />
         </a>

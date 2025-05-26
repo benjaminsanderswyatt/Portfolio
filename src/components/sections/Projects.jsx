@@ -24,7 +24,7 @@ const Projects = () => {
 
   return (
     <>
-      <img className='transition-item' alt='background element' src='/images/background/background.svg' />
+      <img className='transition-item' alt='background element' src='/images/background/background.svg' width={1920} height={202} />
       <CardGroup cards={projectData} />
     </>
   );

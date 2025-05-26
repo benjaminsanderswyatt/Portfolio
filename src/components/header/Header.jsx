@@ -126,14 +126,28 @@ const Header = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/images/linkedin.svg" alt="LinkedIn" className="social-icon" />
+          <img 
+            src="/images/linkedin.svg" 
+            alt="LinkedIn" 
+            className="social-icon" 
+            width={512} 
+            height={512} 
+            loading="lazy"
+          />
         </a>
         <a
           href="https://github.com/benjaminsanderswyatt"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/images/github.svg" alt="GitHub" className="social-icon" />
+          <img 
+            src="/images/github.svg" 
+            alt="GitHub" 
+            className="social-icon" 
+            width={150} 
+            height={150} 
+            loading="lazy"
+          />
         </a>
       </div>
 
@@ -142,20 +156,28 @@ const Header = () => {
         <button
           className={`nav-menu-button ${menuOpen ? 'active' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-expanded={menuOpen}
+          aria-controls='nav-menu'
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          type='button'
         >
           <img
             src="/images/icons/burger.svg"
             alt={menuOpen ? 'Close menu' : 'Menu'}
             className="nav-burger-icon"
+            width={45}
+            height={36}
+            loading="lazy"
           />
         </button>
 
-        <nav className={`nav-menu ${menuOpen ? 'open' : ''}`}>
+        <nav id="nav-menu" className={`nav-menu ${menuOpen ? 'open' : ''}`} role='navigation' aria-label='Primary navigation'>
           {CONFIG.NAV_ITEMS.map((item) => (
             <button
               key={item.id}
               className={`nav-item ${activeSection === item.id ? 'selected' : ''}`}
               onClick={() => handleSectionNavigation(item.id)}
+              type='button'
             >
               {item.label}
             </button>

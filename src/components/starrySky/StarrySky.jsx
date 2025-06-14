@@ -5,9 +5,9 @@ import { generateStars } from './starsData';
 import './starry-sky.css';
 
 const CONFIG = {
-  STAR_COUNT: 60,
+  STAR_COUNT: 80,
   MIN_STAR_RADIUS: 0.8,
-  MAX_STAR_RADIUS: 1.5,
+  MAX_STAR_RADIUS: 1.6,
   MIN_ANIMATION_DELAY_MS: 0,
   MAX_ANIMATION_DELAY_MS: 2000,
   MIN_ANIMATION_DURATION_MS: 3000,

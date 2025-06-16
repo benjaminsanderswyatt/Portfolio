@@ -19,9 +19,18 @@ code {
 :root {
 
   --text: white;
+  --body-text: #e6f7ff;
   --moon-text: #252353;   /* 3a247b */
 
+  --sub-text: #cce6ff;
 
+  --accent: #00e0ff;
+
+
+
+  /* Cards */
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-highlight: rgba(0, 224, 255, 0.2);
 
   /* Cursor trail */
   --trail-1: #a5b4fc;
@@ -32,11 +41,10 @@ code {
   --trail-6: #dbeafe;
 
 
-  /* Background colour gradient */
+  /* Background colour */
   --bg-color-1: #0b0c2a;
-  --bg-color-2: #1f1b45;
-  --bg-color-3: #2b2a60;
-  --bg-color-4: #1a1a3d;
+
+  --section-bg: #00162c;
 
 
   /* Background elements */

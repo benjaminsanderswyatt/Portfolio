@@ -28,12 +28,6 @@ const Header = () => {
 
 
   useEffect(() => {
-    // Get all of the sections
-    const sectionOffsets = CONFIG.NAV_ITEMS.map(item => {
-      const sect = document.getElementById(item.id);
-      return sect ? { id: item.id, offsetTop: sect.offsetTop } : null;
-    }).filter(Boolean);
-
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -43,15 +37,17 @@ const Header = () => {
       setOpacity(Math.min(scrollY / maxScroll, 1) * CONFIG.MAX_HEADER_OPACITY);
 
       // Find active section based on scroll position
-      const scrollPos = scrollY + window.innerHeight / 2;
-      let current = CONFIG.NAV_ITEMS[0].id;
+      const scrollPos = scrollY + window.innerHeight * CONFIG.SCROLL_OFFSET_FACTOR;
+      let currentSection = CONFIG.NAV_ITEMS[0].id;
 
-      for (const section of sectionOffsets) {
-        if (scrollPos >= section.offsetTop) {
-          current = section.id;
+      for (const item of CONFIG.NAV_ITEMS) {
+        const section = document.getElementById(item.id);
+        if (section && section.offsetTop <= scrollPos) {
+          currentSection = item.id;
         }
       }
-      setActiveSection(current);
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);

@@ -2,8 +2,9 @@
 .about-section {
   background: var(--section-bg);
   color: var(--text);
-  padding: 100px 0;
+  padding: 100px 0 40px 0;
 }
+
 
 .about-container {
   max-width: 1200px;
@@ -90,26 +91,8 @@
 
 
 
-/* Cards */
-.card-section {
-  background: var(--card-bg);
-  border-radius: 12px;
-  border-left: 4px solid var(--accent);
-  padding: 25px;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-}
-
 
 /* Education section */
-.education-title {
-  font-size: 1.8rem;
-  margin-bottom: 25px;
-  color: var(--accent);
-  text-align: center;
-}
 
 .education-item {
   max-width: 800px;

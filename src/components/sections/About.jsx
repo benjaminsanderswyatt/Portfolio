@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Card from "../common/Card";
 import './about.css';
 
 
@@ -31,13 +32,31 @@ const textVariants = {
 };
 
 
-const educationVariants = {
-  hidden: { x: '-100%', opacity: 1 },
-  visible: { 
-    x: 0, 
-    opacity: 1, 
-    transition: { duration: 1.1, ease: 'easeOut' } }
-};
+
+
+
+
+
+
+const educationContent = (
+  <div className="education-item">
+    <div className="education-header">
+      <span className="degree">BSc (Hons) Computer Science</span>
+      <span className="date">2022 - 2025</span>
+    </div>
+    <div className="university">University of Plymouth</div>
+    <ul className="achievements">
+      <li>First-Class Honours</li>
+      <li>Final Year Modules: Computing Project, Full-Stack Development, Big Data Analytics, HCI</li>
+      <li>Second Year: Software Engineering 2, Game Dev, AI, Info Retrieval</li>
+      <li>First Year: Systems, Security, Algorithms, Software Engineering</li>
+    </ul>
+  </div>
+);
+
+
+
+
 
 
 
@@ -91,39 +110,11 @@ const About = () => {
 
 
 
-        <div className="card-section">
-
-          <motion.div
-            className="education-content"
-            variants={educationVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.02 }}
-          >
-
-            <h3 className="education-title">Education</h3>
-
-            <div className="education-item">
-
-              <div className="education-header">
-                <span className="degree">BSc (Hons) Computer Science</span>
-                <span className="date">2022 - 2025</span>
-              </div>
-
-              <div className="university">University of Plymouth</div>
-              
-              <ul className="achievements">
-                <li>First-Class Honours</li>
-                <li>Final Year Modules: Computing Project, Full-Stack Development, Big Data Analytics, HCI</li>
-                <li>Second Year: Software Engineering 2, Game Dev, AI, Info Retrieval</li>
-                <li>First Year: Systems, Security, Algorithms, Software Engineering</li>
-              </ul>
-
-            </div>
-
-          </motion.div>
-
-        </div>
+        <Card 
+          title="Education"
+          amount={0.02}
+          content={educationContent}
+        />
 
       </div>
     </section>

@@ -47,12 +47,14 @@
 
 /* Navigation menu */
 .nav-menu {
+  box-sizing: border-box;
   display: flex;
   gap: 10px;
   list-style: none;
 }
 
 .nav-item {
+  box-sizing: border-box;
   padding: 8px 12px;
   border: none;
   border-radius: 8px;
@@ -105,6 +107,7 @@
   }
 
   .nav-menu {
+    box-sizing: border-box;
     position: fixed;
     top: 70px;
     left: 0;
@@ -132,6 +135,7 @@
   }
 
   .nav-item {
+    box-sizing: border-box;
     width: 100%;
     text-align: left;
   }

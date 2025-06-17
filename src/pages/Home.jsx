@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router';
+import AnimatedDivider from '../components/common/AnimatedDivider';
 
 
 import StarrySky from '../components/starrySky/StarrySky';
@@ -10,6 +11,11 @@ import Projects from '../components/sections/Projects';
 import Contact from '../components/sections/Contact';
 
 import './home.css';
+
+
+
+
+
 
 const Home = () => {
   const location = useLocation();
@@ -35,6 +41,18 @@ const Home = () => {
           
 
           <About />
+          
+          
+          <AnimatedDivider />
+
+
+
+
+
+
+
+
+
           <Skills />
           <Projects />
           <Contact />

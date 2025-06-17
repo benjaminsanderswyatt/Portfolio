@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -25,6 +26,7 @@ code {
   --sub-text: #cce6ff;
 
   --accent: #00e0ff;
+  --accent-rgb: 0, 224, 255;
 
 
 
@@ -60,6 +62,23 @@ code {
 
   --navbar-item-hover: rgba(255, 255, 255, 0.1);
   --navbar-selected: rgba(255, 255, 255, 0.15);
+
+
+
+  /* Divider */
+  --divider-line-gradient-ends: transparent;
+  --divider-line-gradient-middle: #cce6ff80;
+
+  /* Star */
+  --central-star-color: #ffcc00;
+
+  /* Planets */
+  --planet-1-color: #4a6cf7;
+  --planet-2-color: #ff5252;
+  --planet-3-color: #40c057;
+
+  /* Orbits */
+  --orbit-border: rgba(148, 163, 184, 0.25);
 
 
 }

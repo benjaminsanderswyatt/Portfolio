@@ -1,0 +1,120 @@
+.divider-container {
+    position: relative;
+    width: 100%;
+    padding: 28px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 0;
+
+    background: linear-gradient(
+        to bottom,
+        var(--section-bg) 0%,
+        transparent 50%,
+        var(--section-bg) 100%
+    );
+    }
+
+
+.divider-line {
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        var(--divider-line-gradient-ends) 0%,
+        var(--divider-line-gradient-middle) 20%,
+        var(--divider-line-gradient-middle) 80%,
+        var(--divider-line-gradient-ends) 100%
+    );
+    position: absolute;
+    transform-origin: center;
+}
+
+
+.divider-center {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    cursor: default;
+}
+
+
+/* Sun */
+.central-star {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--central-star-color);
+    box-shadow: 0 0 4px var(--central-star-color);
+    z-index: 10;
+    will-change: transform;
+}
+
+
+
+/* Orbits */
+.orbit {
+    box-sizing: border-box;
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--orbit-border);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    will-change: transform, box-shadow;
+    transition: box-shadow 0.3s ease;
+}
+
+
+.orbit-1 {
+    width: 60px;
+    height: 60px;
+}
+
+.orbit-2 {
+    width: 80px;
+    height: 80px;
+}
+
+.orbit-3 {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* Planets */
+
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) !important; /* important to override the animator motion */
+    will-change: transform, box-shadow;
+}
+
+
+.planet-1 {
+    width: 8px;
+    height: 8px;
+    background-color: var(--planet-1-color);
+}
+
+.planet-2 {
+    width: 10px;
+    height: 10px;
+    background-color: var(--planet-2-color);
+}
+
+.planet-3 {
+    width: 7px;
+    height: 7px;
+    background-color: var(--planet-3-color);
+}
+

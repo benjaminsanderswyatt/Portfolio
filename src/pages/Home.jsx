@@ -1,20 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { useLocation } from 'react-router';
-import AnimatedDivider from '../components/common/AnimatedDivider';
 
 
-import StarrySky from '../components/starrySky/StarrySky';
+//import StarrySky from '../components/starrySky/StarrySky';
 import Hero from '../components/sections/Hero';
 import About from '../components/sections/About';
-import Skills from '../components/sections/Skills';
-import Projects from '../components/sections/Projects';
-import Contact from '../components/sections/Contact';
+//import Skills from '../components/sections/Skills';
+//import Projects from '../components/sections/Projects';
+//import Contact from '../components/sections/Contact';
 
 import './home.css';
 
 
+// Lazy load
+const LazyStarrySky = lazy(() => import('../components/starrySky/StarrySky'));
 
+const LazyAnimatedDivider = lazy(() => import('../components/common/AnimatedDivider'));
 
+const LazySkills = lazy(() => import('../components/sections/Skills'));
+const LazyProjects = lazy(() => import('../components/sections/Projects'));
+const LazyContact = lazy(() => import('../components/sections/Contact'));
 
 
 const Home = () => {
@@ -35,7 +40,10 @@ const Home = () => {
 
   return (
     <>
-      <StarrySky />
+      <Suspense fallback={null}>
+        <LazyStarrySky />
+      </Suspense>
+      
       <main>
           <Hero />
           
@@ -43,19 +51,26 @@ const Home = () => {
           <About />
           
           
-          <AnimatedDivider />
+          {/* Lazy load Animated Divider */}
+          <Suspense fallback={null}>
+            <LazyAnimatedDivider />
+          </Suspense>
 
 
 
 
 
+          <Suspense fallback={null}>
+            <LazySkills />
+          </Suspense>
 
+          <Suspense fallback={null}>
+            <LazyProjects />
+          </Suspense>
 
-
-
-          <Skills />
-          <Projects />
-          <Contact />
+          <Suspense fallback={null}>
+            <LazyContact />
+          </Suspense>
 
 
       </main>

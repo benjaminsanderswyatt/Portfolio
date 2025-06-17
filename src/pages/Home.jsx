@@ -17,6 +17,7 @@ const LazyStarrySky = lazy(() => import('../components/starrySky/StarrySky'));
 
 const LazyAnimatedDivider = lazy(() => import('../components/common/AnimatedDivider'));
 
+const LazyAbout = lazy(() => import('../components/sections/About'));
 const LazySkills = lazy(() => import('../components/sections/Skills'));
 const LazyProjects = lazy(() => import('../components/sections/Projects'));
 const LazyContact = lazy(() => import('../components/sections/Contact'));
@@ -48,8 +49,9 @@ const Home = () => {
           <Hero />
           
 
-          <About />
-          
+          <Suspense fallback={null}>
+            <LazyAbout />
+          </Suspense>
           
           {/* Lazy load Animated Divider */}
           <Suspense fallback={null}>

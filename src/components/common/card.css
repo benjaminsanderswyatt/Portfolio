@@ -1,0 +1,42 @@
+/* Cards */
+.card-section {
+  flex: 1 1 300px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+  padding: 25px;
+  max-width: none;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.card-content {
+    height: 100%;
+}
+
+
+/* Title */
+.card-title {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: var(--accent);
+  text-align: center;
+  width: 100%;
+}
+
+
+
+
+
+
+/* Card Group */
+.card-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}

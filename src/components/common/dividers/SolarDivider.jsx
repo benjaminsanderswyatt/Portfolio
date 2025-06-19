@@ -1,7 +1,7 @@
 import React, { useMemo, memo, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-import "./animatedDivider.css";
+import "./solarDivider.css";
 
 // Gives a random starting location for the orbit
 const randomRotation = () => Math.floor(Math.random() * 360);

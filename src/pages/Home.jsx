@@ -2,6 +2,9 @@ import React, { useEffect, Suspense, lazy } from 'react';
 import { useLocation } from 'react-router';
 
 
+import HelixDivider from '../components/common/dividers/HelixDivider';
+
+
 //import StarrySky from '../components/starrySky/StarrySky';
 import Hero from '../components/sections/Hero';
 //import About from '../components/sections/About';
@@ -15,7 +18,7 @@ import './home.css';
 // Lazy load
 const LazyStarrySky = lazy(() => import('../components/starrySky/StarrySky'));
 
-const LazyAnimatedDivider = lazy(() => import('../components/common/AnimatedDivider'));
+const LazySolarDivider = lazy(() => import('../components/common/dividers/SolarDivider'));
 
 const LazyAbout = lazy(() => import('../components/sections/About'));
 const LazySkills = lazy(() => import('../components/sections/Skills'));
@@ -55,9 +58,9 @@ const Home = () => {
           
           {/* Lazy load Animated Divider */}
           <Suspense fallback={null}>
-            <LazyAnimatedDivider />
+            <LazySolarDivider />
           </Suspense>
-
+          <HelixDivider />
 
 
 

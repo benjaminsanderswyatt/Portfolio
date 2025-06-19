@@ -8,6 +8,8 @@
     transparent 75%,
     var(--section-bg) 100%
   );
+  justify-content: center;
+  display: flex;
 }
 
 .earth-moon-helix-divider {
@@ -22,7 +24,6 @@
 
 .divider-full {
   width: 100%;
-  justify-self: anchor-center;
 }
 
 .moon-trail-canvas {

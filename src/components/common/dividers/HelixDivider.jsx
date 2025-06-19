@@ -147,7 +147,10 @@ const EarthMoonHelixDivider = () => {
       const perspectiveScale = 1 - CONFIG.PERSPECTIVE_SCALE_RANGE * prevPoint.depthFactor;
       const lineWidth = CONFIG.BASE_TRAIL_WIDTH * (0.3 + 0.7 * progress) * perspectiveScale;
 
-      ctx.strokeStyle = `rgba(180, 200, 255, ${opacity})`;
+      // Get and set line colour
+      const rootStyles = getComputedStyle(document.documentElement);
+      const trailRGB = rootStyles.getPropertyValue('--moon-trail-color').trim() || "180, 200, 255";
+      ctx.strokeStyle = `rgba(${trailRGB}, ${opacity})`;
       ctx.lineWidth = lineWidth;
       ctx.lineCap = 'round';
 

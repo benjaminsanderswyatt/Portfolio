@@ -7,7 +7,7 @@ import "./animatedDivider.css";
 const randomRotation = () => Math.floor(Math.random() * 360);
 
 
-const Orbit = memo(({ className, startRotation, duration, , planetClassName }) => (
+const Orbit = memo(({ className, startRotation, duration, planetClassName }) => (
     
     <motion.div
         className={`orbit ${className}`}

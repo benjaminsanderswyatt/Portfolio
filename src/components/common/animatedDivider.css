@@ -11,7 +11,8 @@
     background: linear-gradient(
         to bottom,
         var(--section-bg) 0%,
-        transparent 50%,
+        transparent 25%,
+        transparent 75%,
         var(--section-bg) 100%
     );
     }

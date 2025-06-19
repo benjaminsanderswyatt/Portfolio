@@ -69,13 +69,21 @@ code {
   --divider-line-gradient-ends: transparent;
   --divider-line-gradient-middle: #cce6ff80;
 
-  /* Star */
-  --central-star-color: #ffcc00;
+   /* Sun */
+  --star-highlight: #fff4b3;
+  --star-core: #ffcc00;
+  --star-deep: #cc9900;
+  --star-glow: #ffcc00cc;
 
   /* Planets */
   --planet-1-color: #4a6cf7;
+  --planet-1-glow: #4a6cf780;
+
   --planet-2-color: #ff5252;
+  --planet-2-glow: #ff525280;
+
   --planet-3-color: #40c057;
+  --planet-3-glow: #40c05780;
 
   /* Orbits */
   --orbit-border: rgba(148, 163, 184, 0.25);

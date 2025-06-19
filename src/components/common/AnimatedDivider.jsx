@@ -7,13 +7,12 @@ import "./animatedDivider.css";
 const randomRotation = () => Math.floor(Math.random() * 360);
 
 
-const Orbit = memo(({ className, startRotation, duration, hoverColor, planetClassName }) => (
+const Orbit = memo(({ className, startRotation, duration, , planetClassName }) => (
     
     <motion.div
         className={`orbit ${className}`}
         initial={{ rotate: startRotation }}
         animate={{ rotate: startRotation + 360 }}
-        whileHover={{ boxShadow: `0 0 15px ${hoverColor}` }}
         transition={{ duration, repeat: Infinity, ease: "linear" }}
     >
 
@@ -63,7 +62,6 @@ const AnimatedDivider = () => {
                     className="orbit-1"
                     startRotation={startRotations[0]}
                     duration={20}
-                    hoverColor="var(--hover-color-1)"
                     planetClassName="planet-1"
                     inView={inView}
                 />
@@ -72,7 +70,6 @@ const AnimatedDivider = () => {
                     className="orbit-2"
                     startRotation={startRotations[1]}
                     duration={35}
-                    hoverColor="var(--hover-color-2)"
                     planetClassName="planet-2"
                     inView={inView}
                 />
@@ -81,7 +78,6 @@ const AnimatedDivider = () => {
                     className="orbit-3"
                     startRotation={startRotations[2]}
                     duration={50}
-                    hoverColor="var(--hover-color-3)"
                     planetClassName="planet-3"
                     inView={inView}
                 />

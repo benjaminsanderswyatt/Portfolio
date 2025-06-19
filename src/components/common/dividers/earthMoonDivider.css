@@ -1,0 +1,76 @@
+.helix-divider-holder {
+  position: relative;
+  width: 100%;
+    background: linear-gradient(
+    to bottom,
+    var(--section-bg) 0%,
+    transparent 25%,
+    transparent 75%,
+    var(--section-bg) 100%
+  );
+}
+
+.earth-moon-helix-divider {
+  position: relative;
+  width: 80%;
+  height: 146px;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+
+.divider-full {
+  width: 100%;
+  justify-self: anchor-center;
+}
+
+.moon-trail-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+  overflow-x: visible;
+}
+
+.earth, .moon {
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  will-change: transform, opacity;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: opacity 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.earth {
+  width: 22px;
+  height: 22px;
+  margin-top: -11px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--earth-highlight) 0%,
+    var(--earth-color) 20%,
+    var(--earth-deep) 100%
+  );
+  box-shadow: 0 0 10px var(--earth-glow);
+  z-index: 4;
+}
+
+.moon {
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--moon-highlight) 0%,
+    var(--moon-color) 100%
+  );
+  box-shadow: 0 0 6px var(--moon-glow);
+  transition: transform 0.05s linear, opacity 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+  z-index: 3;
+}

@@ -1,29 +1,33 @@
 import React, { useEffect, Suspense, lazy } from 'react';
 import { useLocation } from 'react-router';
 
-
-import HelixDivider from '../components/common/dividers/HelixDivider';
-
+import './home.css';
 
 //import StarrySky from '../components/starrySky/StarrySky';
 import Hero from '../components/sections/Hero';
-//import About from '../components/sections/About';
-//import Skills from '../components/sections/Skills';
-//import Projects from '../components/sections/Projects';
-//import Contact from '../components/sections/Contact';
+// import About from '../components/sections/About';
+// import Skills from '../components/sections/Skills';
+// import Projects from '../components/sections/Projects';
+// import Contact from '../components/sections/Contact';
 
-import './home.css';
+// Placeholder component
+import SectionPlaceholder from '../components/common/placeholders/SectionPlaceholder';
+
 
 
 // Lazy load
 const LazyStarrySky = lazy(() => import('../components/starrySky/StarrySky'));
 
 const LazySolarDivider = lazy(() => import('../components/common/dividers/SolarDivider'));
+const LazyHelixDivider = lazy(() => import('../components/common/dividers/HelixDivider'));
 
+// Lazy load sections
 const LazyAbout = lazy(() => import('../components/sections/About'));
 const LazySkills = lazy(() => import('../components/sections/Skills'));
 const LazyProjects = lazy(() => import('../components/sections/Projects'));
 const LazyContact = lazy(() => import('../components/sections/Contact'));
+
+
 
 
 const Home = () => {
@@ -32,14 +36,33 @@ const Home = () => {
   useEffect(() => {
     if (location.state?.scrollTo) {
       const sectionId = location.state.scrollTo;
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
+      let retryCount = 0;
+      const maxRetries = 10;
       
-      window.history.replaceState({}, document.title, window.location.pathname);
+      const scrollToSection = () => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+          window.history.replaceState({}, document.title, window.location.pathname);
+          return true;
+        }
+        return false;
+      };
+
+      // Initial try
+      if (!scrollToSection()) {
+        // Retry if section not loaded yet
+        const retryInterval = setInterval(() => {
+          if (scrollToSection() || retryCount >= maxRetries) {
+            clearInterval(retryInterval);
+          }
+          retryCount++;
+        }, 300);
+      }
     }
   }, [location]);
+
+
 
 
   return (
@@ -49,31 +72,37 @@ const Home = () => {
       </Suspense>
       
       <main>
+          {/* Critical (not lazy load) */}
           <Hero />
-          
 
-          <Suspense fallback={null}>
+
+          {/* About section */}
+          <Suspense fallback={<SectionPlaceholder height="80vh" />}>
             <LazyAbout />
+            
+            {/* Sub lazy divider */}
+            <Suspense fallback={null}>
+              <LazySolarDivider />
+            </Suspense>
           </Suspense>
           
-          {/* Lazy load Animated Divider */}
-          <Suspense fallback={null}>
-            <LazySolarDivider />
-          </Suspense>
-          <HelixDivider />
 
-
-
-
-          <Suspense fallback={null}>
+          {/* Skills section */}
+          <Suspense fallback={<SectionPlaceholder height="60vh" />}>
             <LazySkills />
+            
+            {/* Sub lazy divider */}
+            <Suspense fallback={null}>
+              <LazyHelixDivider />
+            </Suspense>
           </Suspense>
 
-          <Suspense fallback={null}>
+          
+          <Suspense fallback={<SectionPlaceholder height="70vh" />}>
             <LazyProjects />
           </Suspense>
 
-          <Suspense fallback={null}>
+          <Suspense fallback={<SectionPlaceholder height="50vh" />}>
             <LazyContact />
           </Suspense>
 

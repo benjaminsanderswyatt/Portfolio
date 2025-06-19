@@ -1,0 +1,5 @@
+.section-placeholder {
+    position: relative;
+    overflow: hidden;
+    background: var(--section-bg);
+}

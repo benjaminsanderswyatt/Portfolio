@@ -25,10 +25,31 @@ code {
 
   --sub-text: #cce6ff;
 
+
+  /* Accent Colours */
+
   --accent: #00e0ff;
   --accent-rgb: 0, 224, 255;
 
   --accent-sec: #ff9966;
+  --accent-sec-rgb: 255, 153, 102;
+
+
+
+  --accent-1: #a5b4fc;
+  --accent-2: #93c5fd;
+  --accent-3: #c4b5fd;
+  --accent-4: #bfdbfe;
+  --accent-5: #e0e7ff;
+  --accent-6: #dbeafe;
+
+
+
+  /* Hover colour */
+  --hover-bg: #111827;
+
+
+
 
 
   /* Cards */

@@ -33,7 +33,7 @@
   display: inline-block;
 }
 
-.section-title::after {
+#about .section-title::after {
   content: '';
   position: absolute;
   bottom: -10px;

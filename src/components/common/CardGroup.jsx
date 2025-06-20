@@ -20,6 +20,7 @@ const CardGroup = ({ cards = [], stagger = 0, amount = 1 }) => {
     <div className="card-group">
       {cards.map(({ title = "Title", content = "Content" }, i) => (
         <div key={i} className="card-section">
+
           <motion.div
             className="card-content"
             variants={cardContentVariants}
@@ -31,6 +32,7 @@ const CardGroup = ({ cards = [], stagger = 0, amount = 1 }) => {
             <h3 className="card-title">{title}</h3>
             <div className="card-body">{content}</div>
           </motion.div>
+          
         </div>
       ))}
     </div>

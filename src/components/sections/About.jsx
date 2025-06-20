@@ -3,6 +3,27 @@ import { motion } from 'framer-motion';
 import Card from "../common/Card";
 import './about.css';
 
+import { education } from '../../data/about';
+
+
+const educationContent = (
+  <div className="education-item">
+    <div className="education-header">
+      <span className="degree">{education.degree}</span>
+      <span className="date">{education.date}</span>
+    </div>
+    <div className="university">{education.university}</div>
+    <ul className="achievements">
+      {education.achievements.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+
+
+
 
 const containerVariants = {
   hidden: {},
@@ -30,31 +51,6 @@ const textVariants = {
     transition: { duration: 0.8, ease: 'easeOut' }
   }
 };
-
-
-
-
-
-
-
-
-const educationContent = (
-  <div className="education-item">
-    <div className="education-header">
-      <span className="degree">BSc (Hons) Computer Science</span>
-      <span className="date">2022 - 2025</span>
-    </div>
-    <div className="university">University of Plymouth</div>
-    <ul className="achievements">
-      <li>First-Class Honours</li>
-      <li>Final Year Modules: Computing Project, Full-Stack Development, Big Data Analytics, HCI</li>
-      <li>Second Year: Software Engineering 2, Game Dev, AI, Info Retrieval</li>
-      <li>First Year: Systems, Security, Algorithms, Software Engineering</li>
-    </ul>
-  </div>
-);
-
-
 
 
 

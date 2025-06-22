@@ -6,6 +6,7 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/animations/perspective.css';
 import '../../styles/common/tooltip.css';
 
+
 import './skills.css';
 
 import { languageSkills, frameLib, devTool } from '../../data/skills';
@@ -24,7 +25,7 @@ const generateSkillsContent = (skills) => (
             delay={[100, 200]}
             duration={300}
             placement="top"
-            interactive={true}
+            interactive={false}
             theme="custom"
             inertia={true}
             arrow={false}
@@ -70,7 +71,6 @@ const Skills = () => {
     <section id="skills" className="skills-section">
       <div className="skills-holder">
         <h2 className="section-title">Skills</h2>
-
 
         {/* Skills bar of Languages */}
         <div className="skill-bar-wrapper">

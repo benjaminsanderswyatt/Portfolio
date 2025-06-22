@@ -94,10 +94,10 @@ const About = () => {
               I build scalable applications using React, Node.js, and C#, and work with containerization tools like Docker to streamline deployment and automate workflows.  
             </p>
             <p>
-              My projects include real-time web apps, cloud storage, and distributed systems, reflecting a strong focus on writing maintainable code and designing robust infrastructure.  
+              My projects include real-time web apps, cloud storage, and distributed systems, demonstrating a strong focus on writing maintainable code and designing robust infrastructure.  
             </p>
             <p>
-              With leadership experience mentoring peers as a PALS Leader, I’m eager to contribute to innovative software and DevOps teams.
+              With strong communication and leadership skills developed through mentoring peers, I'm eager to contribute to innovative software and DevOps teams.
             </p>
 
           </motion.div>

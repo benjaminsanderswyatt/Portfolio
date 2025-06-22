@@ -10,8 +10,9 @@ export const education = {
   university: 'University of Plymouth',
   achievements: [
     'First-Class Honours',
-    'Final Year Modules: Computing Project, Full-Stack Development, Big Data Analytics, HCI',
-    'Second Year: Software Engineering 2, Game Dev, AI, Info Retrieval',
-    'First Year: Systems, Security, Algorithms, Software Engineering',
+    'Dissertation: Distributed Version Control System',
+    'Final Year Modules: Full-Stack Development, Big Data Analytics, Parallel Computing, Human-Computer Interaction',
+    'Second Year Modules: App Development, Artificial Intelligence, Game Development, Infomation Management & Retrieval',
+    'First Year Modules: Cybersecurity & Networks, Computer Systems, Algorithms & Data Structures, Software Engineering',
   ],
 };

@@ -15,11 +15,17 @@ const cardContentVariants = {
   }),
 };
 
-const CardGroup = ({ cards = [], stagger = 0, amount = 1 }) => {
+const CardGroup = ({ cards = [], stagger = 0, amount = 1, flexDirection = "row" }) => {
   return (
-    <div className="card-group">
+    <div className="card-group" style={{ flexDirection: flexDirection }}>
       {cards.map(({ title = "Title", content = "Content" }, i) => (
-        <div key={i} className="card-section">
+        <motion.div
+          key={i}
+          className="card-section"
+          initial={{ scale: 1 }}
+          whileHover={{ scale: 1.015 }}
+          transition={{ type: 'spring', stiffness: 250, damping: 14 }}
+        >
 
           <motion.div
             className="card-content"
@@ -33,7 +39,7 @@ const CardGroup = ({ cards = [], stagger = 0, amount = 1 }) => {
             <div className="card-body">{content}</div>
           </motion.div>
           
-        </div>
+        </motion.div>
       ))}
     </div>
   );

@@ -10,7 +10,40 @@
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
+
+  transition: border-left-color 0.2s ease;
 }
+
+.card-section:hover {
+  border-left-color: var(--accent-sec);
+}
+
+
+/* Hover icon */
+.card-section::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.card-section:hover::before {
+  opacity: 0.8;
+  background: var(--accent-sec);
+}
+
+
+
+
+
+
+
 
 .card-content {
     height: 100%;

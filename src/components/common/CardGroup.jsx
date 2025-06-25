@@ -17,8 +17,8 @@ const cardContentVariants = {
 
 const CardGroup = ({ cards = [], stagger = 0, amount = 1, flexDirection = "row" }) => {
   return (
-    <div className="card-group" style={{ flexDirection: flexDirection }}>
-      {cards.map(({ title = "Title", content = "Content" }, i) => (
+    <div className={`card-group ${flexDirection === "column" ? "is-column" : ""}`}>
+      {cards.map(({ title = "", content = "Content" }, i) => (
         <motion.div
           key={i}
           className="card-section"
@@ -35,7 +35,7 @@ const CardGroup = ({ cards = [], stagger = 0, amount = 1, flexDirection = "row" 
             custom={{ i, stagger }}
             viewport={{ once: true, amount: amount }}
           >
-            <h3 className="card-title">{title}</h3>
+            {title && <h3 className="card-title">{title}</h3>}
             <div className="card-body">{content}</div>
           </motion.div>
           

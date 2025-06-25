@@ -10,7 +10,7 @@ const educationContent = (
   <div className="education-item">
     <div className="education-header">
       <span className="degree">{education.degree}</span>
-      <span className="date">{education.date}</span>
+      <span className="card-label">{education.date}</span>
     </div>
     <div className="university">{education.university}</div>
     <ul className="achievements">

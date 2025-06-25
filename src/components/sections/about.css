@@ -112,7 +112,7 @@
   font-weight: 600;
 }
 
-.date {
+.card-label {
   background: var(--card-highlight);
   padding: 6px 15px;
   border-radius: 20px;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Card from "../common/Card";
+import CardGroup from "../common/CardGroup";
 import './about.css';
 
 import { education } from '../../data/about';
@@ -106,10 +106,10 @@ const About = () => {
 
 
 
-        <Card 
-          title="Education"
+        <CardGroup
           amount={0.02}
-          content={educationContent}
+          stagger={0.4}
+          cards={[{ title: "Education", content: educationContent }]}
         />
 
       </div>

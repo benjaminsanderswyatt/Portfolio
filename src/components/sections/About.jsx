@@ -84,9 +84,13 @@ const About = () => {
           >
             <div className="profile-frame">
               <img
-                src="/images/profile.webp"
+                src="/images/profile-600.webp"
+                width="600"
+                height="600"
                 alt="Ben Sanders-Wyatt"
                 className="profile-image"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </motion.div>

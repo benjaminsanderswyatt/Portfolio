@@ -20,6 +20,7 @@ const CONFIG = {
   FADE_OUT: 0.9, // Fade out starts at 90%
 };
 
+
 const EarthMoonHelixDivider = () => {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
@@ -222,6 +223,7 @@ const EarthMoonHelixDivider = () => {
     
     drawTrail();
   });
+  
 
   return (
     <div className="helix-divider-holder">

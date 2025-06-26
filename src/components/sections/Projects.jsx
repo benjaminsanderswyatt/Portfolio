@@ -14,11 +14,10 @@ import { projectData } from '../../data/project';
 
 const Projects = () => {
 
-  const projectCards = projectData.map((proj, index) => ({
+  const projectCards = projectData.map((proj) => ({
     content: (
       <article 
         className='project-item'
-        style={{ flexDirection: index % 2 === 0 ? 'row' : 'row-reverse' }}
         aria-label={`Project: ${proj.title}`}
       >
 

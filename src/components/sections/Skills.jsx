@@ -14,44 +14,43 @@ import { languageSkills, frameLib, devTool } from '../../data/skills';
 
 
 
-// Create div list from array of skills
-const generateSkillsContent = (skills) => (
-  <>
-    <ul className="skills-list">
-      {skills.map(({ name, tooltip }, i) => (
-        <li key={i}>
-          <Tippy
-            content={tooltip}
-            animation="perspective"
-            delay={[100, 200]}
-            duration={300}
-            placement="top"
-            interactive={false}
-            theme="custom"
-            inertia={true}
-            arrow={false}
-          >
-            <span className="tooltip-target">{name}</span>
-          </Tippy>
-
-        </li>
-      ))}
-    </ul>
-
-    <HoverArrow />
-  </>
-);
-
-// Create cards
-const skillsCards = [
-  { title: 'Frameworks & Libraries', content: generateSkillsContent(frameLib) },
-  { title: 'DevOps & Tools', content: generateSkillsContent(devTool) },
-];
-
-
-
-
 const Skills = () => {
+
+  // Create div list from array of skills
+  const generateSkillsContent = (skills) => (
+    <>
+      <ul className="skills-list">
+        {skills.map(({ name, tooltip }, i) => (
+          <li key={i}>
+            <Tippy
+              content={tooltip}
+              animation="perspective"
+              delay={[100, 200]}
+              duration={300}
+              placement="top"
+              interactive={false}
+              theme="custom"
+              inertia={true}
+              arrow={false}
+            >
+              <span className="tooltip-target">{name}</span>
+            </Tippy>
+
+          </li>
+        ))}
+      </ul>
+
+      <HoverArrow />
+    </>
+  );
+
+  // Create cards
+  const skillsCards = [
+    { title: 'Frameworks & Libraries', content: generateSkillsContent(frameLib) },
+    { title: 'DevOps & Tools', content: generateSkillsContent(devTool) },
+  ];
+
+
   
   return (
     <section id="skills" className="skills-section">
@@ -62,10 +61,13 @@ const Skills = () => {
         <div className="skill-bar-wrapper">
 
           {languageSkills.map((skill, i) => (
+
             <motion.div
               className="skill-item"
               key={i}
-              initial={{ scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 300, damping: 12 }}
             >
@@ -90,7 +92,9 @@ const Skills = () => {
                 </div>
               </div>
             </motion.div>
+
           ))}
+
         </div>
 
 

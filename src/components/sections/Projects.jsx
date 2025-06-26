@@ -11,56 +11,58 @@ import './projects.css';
 import { projectData } from '../../data/project';
 
 
-const projectCards = projectData.map((proj, index) => ({
-  content: (
-    <article 
-      className='project-item'
-      style={{ flexDirection: index % 2 === 0 ? 'row' : 'row-reverse' }}
-      aria-label={`Project: ${proj.title}`}
-    >
-
-      <div className='project-image-wrapper'>
-        
-        <img 
-          src={proj.image} 
-          alt={`${proj.title} project screenshot`} 
-          className="project-image" 
-          loading="lazy"
-        />
-
-      </div>
-
-
-      <div className="project-card-body">
-        <h3 className='card-title'>{proj.title}</h3>
-
-        <p className="project-description">{proj.description}</p>
-
-        <div className="project-tags">
-          {proj.tech.map((tag, i) => (
-            <CardLabel key={i}>{tag}</CardLabel>
-          ))}
-        </div>
-
-        <div className="project-links">
-          {proj.links?.map((link, i) => (
-            <a key={i} href={link.url} target="_blank" rel="noreferrer" className='tooltip-target'>
-              {link.name}
-            </a>
-          ))}
-        </div>
-      </div>
-
-
-
-    </article>
-  ),
-}));
-
-
-
 
 const Projects = () => {
+
+  const projectCards = projectData.map((proj, index) => ({
+    content: (
+      <article 
+        className='project-item'
+        style={{ flexDirection: index % 2 === 0 ? 'row' : 'row-reverse' }}
+        aria-label={`Project: ${proj.title}`}
+      >
+
+        <div className='project-image-wrapper'>
+          
+          <img 
+            src={proj.image} 
+            alt={`${proj.title} project screenshot`} 
+            className="project-image" 
+            loading="lazy"
+          />
+
+        </div>
+
+
+        <div className="project-card-body">
+          <h3 className='card-title'>{proj.title}</h3>
+
+          <p className="project-description">{proj.description}</p>
+
+          <div className="project-tags">
+            {proj.tech.map((tag, i) => (
+              <CardLabel key={i}>{tag}</CardLabel>
+            ))}
+          </div>
+
+          <div className="project-links">
+            {proj.links?.map((link, i) => (
+              <a key={i} href={link.url} target="_blank" rel="noreferrer" className='tooltip-target'>
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
+
+
+      </article>
+    ),
+  }));
+
+
+
+
   return (
     <section id="projects" className="projects-section">
       <div className="projects-holder">
@@ -70,10 +72,10 @@ const Projects = () => {
 
         <motion.div
           className="view-all-projects"
-          initial={{ opacity: 0, y: 40, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3, type: 'spring', stiffness: 60, damping: 14 }}
-          viewport={{ once: true, amount: 0.9 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, type: 'spring', stiffness: 60, damping: 14 }}
+          viewport={{ once: true, amount: 0.7 }}
         >
 
           <Link to="/project" className="view-all-link-wrapper">

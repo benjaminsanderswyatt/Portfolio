@@ -8,59 +8,62 @@ import './about.css';
 import { education } from '../../data/about';
 
 
-const educationContent = (
-  <div className="education-item">
-    <div className="education-header">
-
-      <span className="degree">{education.degree}</span>
-      <CardLabel>{education.date}</CardLabel>
-
-    </div>
-    <div className="university">{education.university}</div>
-    <ul className="achievements">
-      {education.achievements.map((item, i) => (
-        <li key={i}>{item}</li>
-      ))}
-    </ul>
-  </div>
-);
-
-
-
-
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.3
-    }
-  }
-};
-
-const imageVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.8, ease: 'easeOut' }
-  }
-};
-
-const textVariants = {
-  hidden: { opacity: 0, x: 50 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.8, ease: 'easeOut' }
-  }
-};
-
-
-
-
 
 const About = () => {
+
+  const educationContent = (
+    <div className="education-item">
+      <div className="education-header">
+
+        <span className="degree">{education.degree}</span>
+        <CardLabel>{education.date}</CardLabel>
+
+      </div>
+      <div className="university">{education.university}</div>
+      <ul className="achievements">
+        {education.achievements.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+
+
+
+
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3
+      }
+    }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: 'easeOut' }
+    }
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: 'easeOut' }
+    }
+  };
+
+
+
+
+
+
   return (
     <section id="about" className="section about-section">
       <div className="about-container">
@@ -75,6 +78,9 @@ const About = () => {
           <motion.div
             className="profile-image-container"
             variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
           >
             <div className="profile-frame">
               <img
@@ -86,7 +92,13 @@ const About = () => {
           </motion.div>
 
 
-          <motion.div className="about-text" variants={textVariants}>
+          <motion.div 
+            className="about-text" 
+            variants={textVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             
             <h2 className="section-title">About Me</h2>
             <p className="intro">

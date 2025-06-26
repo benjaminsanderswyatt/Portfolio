@@ -22,7 +22,9 @@ const CardGroup = ({ cards = [], stagger = 0, amount = 1, flexDirection = "row" 
         <motion.div
           key={i}
           className="card-section"
-          initial={{ scale: 1 }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
           whileHover={{ scale: 1.015 }}
           transition={{ type: 'spring', stiffness: 250, damping: 14 }}
         >

@@ -1,9 +1,139 @@
-.transition-item {
-    display: block;
-    height: auto;
-    width: 100%;
-    justify-self: center;
+.projects-section {
+    background: var(--section-bg);
+    padding: 80px 0 40px;
+    color: var(--text);
+}
+
+.projects-holder {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
+.project-item {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    padding: 0 4%;
+}
+
+
+.project-image-wrapper {
+    height: 100%;
+    max-width: 45%;
+    max-width: 45%;
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    backface-visibility: hidden;
+    box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.35);
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+@media (max-width: 768px) {
+    .project-item {
+        flex-direction: column !important;
+    }
+
+    .project-image-wrapper {
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+
+.project-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.project-description {
+    margin: -20px 0 0 0;
+    font-size: 1rem;
+    color: var(--sub-text);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.project-tags {
+    margin: 0px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+
+
+.project-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-links a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+.view-all-projects {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.view-all-link-wrapper {
+    text-decoration: none;
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 22px 2px 22px;
+    border: 2px solid var(--accent);
+    border-radius: 90px;
+    color: var(--accent);
+    background-color: transparent;
+    transition: box-shadow 0.3s ease, color 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.2);
+}
+
+
+.view-all-link-wrapper:hover {
+    color: var(--accent-sec);
+    box-shadow: 0 0 16px rgba(var(--accent-sec-rgb), 0.4);
 }

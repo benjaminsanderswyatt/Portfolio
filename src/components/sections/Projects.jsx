@@ -20,7 +20,14 @@ const projectCards = projectData.map((proj, index) => ({
     >
 
       <div className='project-image-wrapper'>
-        <img src={proj.image} alt={`${proj.title} project screenshot`} className="project-image" />
+        
+        <img 
+          src={proj.image} 
+          alt={`${proj.title} project screenshot`} 
+          className="project-image" 
+          loading="lazy"
+        />
+
       </div>
 
 
@@ -49,12 +56,6 @@ const projectCards = projectData.map((proj, index) => ({
     </article>
   ),
 }));
-
-
-
-
-
-
 
 
 

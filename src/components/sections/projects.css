@@ -29,7 +29,6 @@
 .project-image-wrapper {
     height: 100%;
     max-width: 45%;
-    max-width: 45%;
     overflow: hidden;
     border-radius: 8px;
     display: flex;
@@ -47,7 +46,6 @@
 
 .project-image:hover {
     transform: scale(1.05);
-    filter: brightness(1.05);
 }
 
 @media (max-width: 768px) {

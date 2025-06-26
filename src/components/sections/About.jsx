@@ -11,7 +11,7 @@ import { education } from '../../data/about';
 const educationContent = (
   <div className="education-item">
     <div className="education-header">
-      
+
       <span className="degree">{education.degree}</span>
       <CardLabel>{education.date}</CardLabel>
 
@@ -78,7 +78,7 @@ const About = () => {
           >
             <div className="profile-frame">
               <img
-                src="/images/profile.jpg"
+                src="/images/profile.webp"
                 alt="Ben Sanders-Wyatt"
                 className="profile-image"
               />

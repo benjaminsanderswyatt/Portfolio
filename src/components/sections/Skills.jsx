@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CardGroup from '../common/CardGroup';
+import HoverArrow from '../common/HoverArrow';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/animations/perspective.css';
@@ -37,22 +38,7 @@ const generateSkillsContent = (skills) => (
       ))}
     </ul>
 
-     <div className="hover-visual-cue" aria-label="Hover items for details">
-
-      <div className="hover-icon" >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          className="arrow"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M12 8L6 14H18L12 8Z" fill="currentColor" />
-        </svg>
-      </div>
-      
-    </div>
+    <HoverArrow />
   </>
 );
 

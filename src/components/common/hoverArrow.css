@@ -1,0 +1,32 @@
+/* Arrow triangle (indicating hover) */
+
+.hover-visual-cue {
+  pointer-events: none;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto 0;
+  text-align: center;
+}
+
+.hover-icon {
+  display: inline-block;
+  color: var(--accent-sec);
+  filter: drop-shadow(0 0 6px var(--accent-sec));
+}
+
+.arrow {
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: bounce 2.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}

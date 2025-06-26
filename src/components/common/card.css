@@ -21,6 +21,10 @@
 
 
 
+
+
+
+
 .card-section:hover {
   border-left-color: var(--accent-sec);
 }
@@ -53,15 +57,14 @@
 
 
 .card-content {
-  padding-top: 28px;
+
 }
 
 
 /* Title */
 .card-title {
   font-size: 1.8rem;
-  margin: 0;
-  margin-bottom: 25px;
+  margin: 28px 0 25px 0;
   color: var(--accent);
   text-align: center;
   width: 100%;

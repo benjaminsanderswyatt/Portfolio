@@ -1,0 +1,51 @@
+
+.card-label {
+  position: relative;
+  background: var(--card-highlight);
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 1rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+
+/* Glint effect */
+.card-label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: glint 4.6s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 0;
+  animation-delay: var(--glint-delay, 0s);
+}
+
+
+@keyframes glint {
+  0% {
+    left: -75%;
+    opacity: 0;
+  }
+  20% {
+    left: 125%;
+    opacity: 1;
+  }
+  21% { /* Creates delay between glints */
+    opacity: 0; 
+  }
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
+}

@@ -10,6 +10,8 @@ import Hero from '../components/sections/Hero';
 // import Projects from '../components/sections/Projects';
 // import Contact from '../components/sections/Contact';
 
+
+
 // Placeholder component
 import SectionPlaceholder from '../components/common/placeholders/SectionPlaceholder';
 
@@ -97,10 +99,16 @@ const Home = () => {
             </Suspense>
           </Suspense>
 
-          
+
+
+
+
           <Suspense fallback={<SectionPlaceholder height="70vh" />}>
             <LazyProjects />
           </Suspense>
+
+
+
 
           <Suspense fallback={<SectionPlaceholder height="50vh" />}>
             <LazyContact />

@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CardGroup from "../common/CardGroup";
+import CardLabel from "../common/CardLabel";
+
 import './about.css';
 
 import { education } from '../../data/about';
@@ -9,8 +11,10 @@ import { education } from '../../data/about';
 const educationContent = (
   <div className="education-item">
     <div className="education-header">
+      
       <span className="degree">{education.degree}</span>
-      <span className="card-label">{education.date}</span>
+      <CardLabel>{education.date}</CardLabel>
+
     </div>
     <div className="university">{education.university}</div>
     <ul className="achievements">

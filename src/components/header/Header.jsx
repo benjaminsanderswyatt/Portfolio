@@ -111,7 +111,7 @@ const Header = () => {
     >
 
       <div className="social-links">
-        {/* <img src="/images/BSW.svg" alt="Logo" className="logo" onClick={() => navigate('/')} /> */}
+        
         <a
           href="https://www.linkedin.com/in/ben-sanders-wyatt"
           target="_blank"
@@ -124,6 +124,7 @@ const Header = () => {
             width={512} 
             height={512} 
             loading="lazy"
+            decoding="sync"
           />
         </a>
         <a
@@ -138,6 +139,7 @@ const Header = () => {
             width={128} 
             height={128} 
             loading="lazy"
+            decoding="sync"
           />
         </a>
       </div>
@@ -159,6 +161,7 @@ const Header = () => {
             width={45}
             height={36}
             loading="lazy"
+            decoding="sync"
           />
         </button>
 

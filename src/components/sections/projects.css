@@ -129,7 +129,7 @@
     border-radius: 90px;
     color: var(--accent);
     background-color: transparent;
-    transition: box-shadow 0.3s ease, color 0.3s ease;
+    transition: box-shadow 0.3s ease, color 0.3s ease, border 0.3 ease;
     font-size: 1.2rem;
     font-weight: 600;
     box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.2);
@@ -138,5 +138,6 @@
 
 .view-all-link-wrapper:hover {
     color: var(--accent-sec);
+    border: 2px solid var(--accent-sec);
     box-shadow: 0 0 16px rgba(var(--accent-sec-rgb), 0.4);
 }

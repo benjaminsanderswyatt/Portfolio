@@ -27,7 +27,6 @@ const Projects = () => {
             src={proj.image} 
             alt={`${proj.title} project screenshot`} 
             className="project-image" 
-            loading="lazy"
           />
 
         </div>

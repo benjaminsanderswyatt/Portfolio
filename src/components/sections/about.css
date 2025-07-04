@@ -33,15 +33,22 @@
   display: inline-block;
 }
 
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
 #about .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
   left: 0;
   width: 70px;
-  height: 4px;
-  background: var(--accent);
-  border-radius: 2px;
+  transform: none;
 }
 
 .intro {
@@ -161,7 +168,7 @@
     gap: 40px;
   }
 
-  .section-title::after {
+  #about .section-title::after {
     left: 50%;
     transform: translateX(-50%);
   }

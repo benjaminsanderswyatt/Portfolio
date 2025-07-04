@@ -10,7 +10,8 @@ import Hero from '../components/sections/Hero';
 // import Projects from '../components/sections/Projects';
 // import Contact from '../components/sections/Contact';
 
-import WaveDivider from '../components/common/dividers/waveDivider';
+import WaveDivider from '../components/common/dividers/WaveDivider';
+
 
 // Placeholder component
 import SectionPlaceholder from '../components/common/placeholders/SectionPlaceholder';
@@ -114,6 +115,8 @@ const Home = () => {
           <Suspense fallback={<SectionPlaceholder height="50vh" />}>
             <LazyContact />
           </Suspense>
+
+         
 
 
       </main>

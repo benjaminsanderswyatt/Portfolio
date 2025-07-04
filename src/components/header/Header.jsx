@@ -3,6 +3,8 @@ import { useNavigate, useLocation } from 'react-router';
 
 import './header.css';
 
+import { SOCIAL_LINKS } from '../../data/socials';
+
 const CONFIG = {
   MAX_HEADER_OPACITY: 0.6, // Opacity of header (after hero)
   NAV_ITEMS: [ // Navbar items links to page sections
@@ -110,38 +112,29 @@ const Header = () => {
       }}
     >
 
-      <div className="social-links">
-        
-        <a
-          href="https://www.linkedin.com/in/ben-sanders-wyatt"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img 
-            src="/images/linkedin.svg" 
-            alt="LinkedIn" 
-            className="social-icon" 
-            width={512} 
-            height={512} 
-            loading="lazy"
-            decoding="sync"
-          />
-        </a>
-        <a
-          href="https://github.com/benjaminsanderswyatt"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img 
-            src="/images/github.svg" 
-            alt="GitHub" 
-            className="social-icon" 
-            width={128} 
-            height={128} 
-            loading="lazy"
-            decoding="sync"
-          />
-        </a>
+      <div className="header-social-links">
+
+        {SOCIAL_LINKS.map((link) => ( // Display all social links in data
+
+          <a
+            key={link.name}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={link.iconFile}
+              alt={link.name}
+              className="header-social-icon"
+              width={link.width}
+              height={link.height}
+              loading="lazy"
+              decoding="sync"
+            />
+          </a>
+
+        ))}
+
       </div>
 
 

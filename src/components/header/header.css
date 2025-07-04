@@ -20,19 +20,19 @@
 
 
 /* Social links */
-.social-links {
+.header-social-links {
   display: flex;
   gap: 20px;
 }
 
-.social-icon {
+.header-social-icon {
   height: 40px;
   width: auto;
   transition: transform 200ms ease;
   cursor: pointer;
 }
 
-.social-icon:hover {
+.header-social-icon:hover {
   transform: scale(1.1);
 }
 

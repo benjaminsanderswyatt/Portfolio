@@ -17,7 +17,7 @@
   align-items: center;
   gap: 40px;
   background: rgba(15, 15, 30, 0.35);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   border-radius: 20px;
   padding: 50px 30px;
   border: 1px solid rgba(var(--accent-rgb), 0.2);

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, memo } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { useGoogleAnalytics, GA_TRACKING_ID } from './hooks/useGoogleAnalytics';
@@ -13,6 +13,22 @@ import Project from './pages/Project';
 
 
 import './styles/App.css';
+
+
+// Component to track route changes for google analytics
+function RouteChangeTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (window.gtag && typeof window.gtag === 'function') {
+      window.gtag('config', GA_TRACKING_ID, {
+        page_path: location.pathname + location.search,
+      });
+    }
+  }, [location]);
+
+  return null;
+}
 
 
 
@@ -50,20 +66,5 @@ function App() {
 }
 
 
-// Component to track route changes for google analytics
-function RouteChangeTracker() {
-  const location = useLocation();
 
-  useEffect(() => {
-    if (window.gtag && typeof window.gtag === 'function') {
-      window.gtag('config', GA_TRACKING_ID, {
-        page_path: location.pathname + location.search,
-      });
-    }
-  }, [location]);
-
-  return null;
-}
-
-
-export default App;
+export default memo(App);

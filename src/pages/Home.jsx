@@ -1,4 +1,4 @@
-import React, { useEffect, Suspense, lazy } from 'react';
+import React, { useEffect, Suspense, lazy, memo, useCallback } from 'react';
 import { useLocation } from 'react-router';
 
 import './home.css';
@@ -36,6 +36,7 @@ const LazyContact = lazy(() => import('../components/sections/Contact'));
 const Home = () => {
   const location = useLocation();
 
+  
   useEffect(() => {
     if (location.state?.scrollTo) {
       const sectionId = location.state.scrollTo;
@@ -64,6 +65,7 @@ const Home = () => {
       }
     }
   }, [location]);
+
 
 
 
@@ -124,4 +126,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default memo(Home);

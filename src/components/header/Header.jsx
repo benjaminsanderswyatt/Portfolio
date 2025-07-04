@@ -26,7 +26,7 @@ const Header = () => {
 
   const [menuOpen, setMenuOpen] = useState(false); // Small screen menu toggle
   const [opacity, setOpacity] = useState(0); // Transparency for header
-  const [activeSection, setActiveSection] = useState(CONFIG.NAV_ITEMS[0].id);
+  const [activeSection, setActiveSection] = useState('');
 
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Header = () => {
 
       // Find active section based on scroll position
       const scrollPos = scrollY + window.innerHeight * CONFIG.SCROLL_OFFSET_FACTOR;
-      let currentSection = CONFIG.NAV_ITEMS[0].id;
+      let currentSection = '';
 
       for (const item of CONFIG.NAV_ITEMS) {
         const section = document.getElementById(item.id);

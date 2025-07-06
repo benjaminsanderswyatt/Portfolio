@@ -82,7 +82,7 @@ const Home = () => {
 
 
           {/* About section */}
-          <Suspense fallback={<SectionPlaceholder height="80vh" />}>
+          <Suspense fallback={<SectionPlaceholder height="115vh" />}>
             <LazyAbout />
             
             {/* Sub lazy divider */}
@@ -93,7 +93,7 @@ const Home = () => {
           
 
           {/* Skills section */}
-          <Suspense fallback={<SectionPlaceholder height="60vh" />}>
+          <Suspense fallback={<SectionPlaceholder height="80vh" />}>
             <LazySkills />
             
             {/* Sub lazy divider */}
@@ -106,7 +106,7 @@ const Home = () => {
 
 
 
-          <Suspense fallback={<SectionPlaceholder height="70vh" />}>
+          <Suspense fallback={<SectionPlaceholder height="140vh" />}>
             <LazyProjects />
 
             {/* Sub lazy divider */}
@@ -116,7 +116,7 @@ const Home = () => {
           </Suspense>
 
 
-          <Suspense fallback={<SectionPlaceholder height="50vh" />}>
+          <Suspense fallback={<SectionPlaceholder height="65vh" background='transparent' />}>
             <LazyContact />
           </Suspense>
 

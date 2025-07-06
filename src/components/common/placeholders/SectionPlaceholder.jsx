@@ -2,8 +2,8 @@ import React from 'react';
 
 import './sectionPlaceholder.css';
 
-const SectionPlaceholder = ({ height = '50vh' }) => (
-  <div className="section-placeholder" style={{ height }}>
+const SectionPlaceholder = ({ height = '50vh', background = 'var(--section-bg)' }) => (
+  <div className="section-placeholder" style={{ height, background }}>
     
   </div>
 );

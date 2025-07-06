@@ -10,7 +10,6 @@ import Hero from '../components/sections/Hero';
 // import Projects from '../components/sections/Projects';
 // import Contact from '../components/sections/Contact';
 
-import WaveDivider from '../components/common/dividers/WaveDivider';
 
 
 // Placeholder component
@@ -23,6 +22,7 @@ const LazyStarrySky = lazy(() => import('../components/starrySky/StarrySky'));
 
 const LazySolarDivider = lazy(() => import('../components/common/dividers/SolarDivider'));
 const LazyHelixDivider = lazy(() => import('../components/common/dividers/HelixDivider'));
+const LazyWaveDivider = lazy(() => import('../components/common/dividers/WaveDivider'));
 
 // Lazy load sections
 const LazyAbout = lazy(() => import('../components/sections/About'));
@@ -108,10 +108,12 @@ const Home = () => {
 
           <Suspense fallback={<SectionPlaceholder height="70vh" />}>
             <LazyProjects />
+
+            {/* Sub lazy divider */}
+            <Suspense fallback={null}>
+              <LazyWaveDivider />
+            </Suspense>
           </Suspense>
-
-
-          <WaveDivider />
 
 
           <Suspense fallback={<SectionPlaceholder height="50vh" />}>

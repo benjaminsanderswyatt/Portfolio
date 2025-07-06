@@ -1,4 +1,4 @@
-import React, { useEffect, Suspense, lazy, memo, useCallback } from 'react';
+import React, { useEffect, Suspense, lazy, memo } from 'react';
 import { useLocation } from 'react-router';
 
 import './home.css';

@@ -16,6 +16,7 @@ const WaveDivider = () => {
             src="/images/wave.svg"
             width={1920} 
             height={150}
+            alt=""
         />
 
 

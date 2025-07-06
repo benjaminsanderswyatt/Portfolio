@@ -24,9 +24,10 @@ const Projects = () => {
         <div className='project-image-wrapper'>
           
           <img 
-            src={proj.image} 
-            alt={`${proj.title} project screenshot`} 
-            className="project-image" 
+            src={proj.image}
+            alt={`${proj.title} project screenshot`}
+            className="project-image"
+            loading='lazy'
           />
 
         </div>

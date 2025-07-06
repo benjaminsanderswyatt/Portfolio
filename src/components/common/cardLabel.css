@@ -15,7 +15,7 @@
   content: '';
   position: absolute;
   top: 0;
-  left: -75%;
+  left: 0;
   width: 50%;
   height: 100%;
   background: linear-gradient(
@@ -24,7 +24,7 @@
     rgba(255, 255, 255, 0.4) 50%,
     transparent 100%
   );
-  transform: skewX(-20deg);
+  transform: translateX(-200%);
   animation: glint 4.6s infinite ease-in-out;
   pointer-events: none;
   z-index: 0;
@@ -34,18 +34,18 @@
 
 @keyframes glint {
   0% {
-    left: -75%;
+    transform: translateX(-200%);
     opacity: 0;
   }
   20% {
-    left: 125%;
+    transform: translateX(200%);
     opacity: 1;
   }
   21% { /* Creates delay between glints */
-    opacity: 0; 
+    opacity: 0;
   }
   100% {
-    left: 125%;
+    transform: translateX(200%);
     opacity: 0;
   }
 }

@@ -14,6 +14,48 @@ import { projectData } from '../../data/project';
 
 const Projects = () => {
 
+  const useProjectsPage = false;
+
+  const viewAllLink = useProjectsPage ? (
+
+    <Link to="/project" className="view-all-link-wrapper">
+      <span>View All Projects</span>
+      <HoverArrow />
+    </Link>
+
+  ) : (
+
+    <a
+      href="https://github.com/benjaminsanderswyatt"
+      target="_blank"
+      rel="noreferrer"
+      className="view-all-link-wrapper"
+    >
+      <span>View All Projects</span>
+      <HoverArrow />
+    </a>
+    
+  );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   const projectCards = projectData.map((proj) => ({
     content: (
       <article 
@@ -77,12 +119,7 @@ const Projects = () => {
           viewport={{ once: true, amount: 0.7 }}
         >
 
-          <Link to="/project" className="view-all-link-wrapper">
-
-            <span>View All Projects</span>
-            <HoverArrow />
-
-          </Link>
+          {viewAllLink}
 
 
         </motion.div>

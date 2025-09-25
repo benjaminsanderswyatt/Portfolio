@@ -1,5 +1,5 @@
 {
-  "name": "Portfolio - Ben Sanders-Wyatt",
+  "name": "BSW - Portfolio",
   "short_name": "BSW",
   "icons": [
     {
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#072142",
-  "background_color": "#072142",
+  "theme_color": "#4e4e79",
+  "background_color": "#4e4e79",
   "display": "standalone"
 }

@@ -15,8 +15,8 @@ export const projectData = [
     },
     {
         title: 'Devon Swimming ASA Website',
-        description: 'Website redesign for Devon Swimming ASA with improved information architecture, accessibility, responsive mobile UX, and a custom WordPress build with new features.',
-        tech: ['WordPress', 'Figma', 'Responsive Design', 'Accessibility'],
+        description: 'Custom WordPress redesign for Devon Swimming ASA, improving information architecture, accessibility, and responsive UX',
+        tech: ['WordPress', 'Figma', 'Accessibility', 'Freelance'],
         image: '/images/projects/devon-swimming-600.webp',
         links: [
             { name: 'Live Site', url: 'https://devonswimming.org.uk' },

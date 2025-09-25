@@ -3,6 +3,15 @@
 
 export const projectData = [
     {
+        title: 'Devon Swimming ASA Website',
+        description: 'Website redesign for Devon Swimming ASA with improved information architecture, accessibility, responsive mobile UX, and a custom WordPress build with new features.',
+        tech: ['WordPress', 'Figma', 'Responsive Design', 'Accessibility'],
+        image: '/images/projects/devon-swimming-600.webp',
+        links: [
+            { name: 'Live Site', url: 'https://devonswimming.org.uk' },
+        ],
+    },
+    {
         title: 'Janus DVCS',
         description: 'Self-hosted distributed version control system with plugin-based CLI, RBAC, and Dockerised microservices',
         tech: ['C#', 'React', 'Docker', 'MySQL'],

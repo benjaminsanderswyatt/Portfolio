@@ -3,15 +3,6 @@
 
 export const projectData = [
     {
-        title: 'Devon Swimming ASA Website',
-        description: 'Website redesign for Devon Swimming ASA with improved information architecture, accessibility, responsive mobile UX, and a custom WordPress build with new features.',
-        tech: ['WordPress', 'Figma', 'Responsive Design', 'Accessibility'],
-        image: '/images/projects/devon-swimming-600.webp',
-        links: [
-            { name: 'Live Site', url: 'https://devonswimming.org.uk' },
-        ],
-    },
-    {
         title: 'Janus DVCS',
         description: 'Self-hosted distributed version control system with plugin-based CLI, RBAC, and Dockerised microservices',
         tech: ['C#', 'React', 'Docker', 'MySQL'],
@@ -20,6 +11,15 @@ export const projectData = [
             { name: 'Demo Video', url: 'https://www.youtube.com/watch?v=7Hoq75ns3S4' },
             { name: 'Docs', url: 'https://github.com/benjaminsanderswyatt/COMP3000-JanusVersionControl/blob/main/Documentation/Report/Janus_Version_Control_Report.pdf' },
             { name: 'GitHub', url: 'https://github.com/benjaminsanderswyatt/COMP3000-JanusVersionControl' },
+        ],
+    },
+    {
+        title: 'Devon Swimming ASA Website',
+        description: 'Website redesign for Devon Swimming ASA with improved information architecture, accessibility, responsive mobile UX, and a custom WordPress build with new features.',
+        tech: ['WordPress', 'Figma', 'Responsive Design', 'Accessibility'],
+        image: '/images/projects/devon-swimming-600.webp',
+        links: [
+            { name: 'Live Site', url: 'https://devonswimming.org.uk' },
         ],
     },
     {

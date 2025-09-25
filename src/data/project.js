@@ -16,7 +16,7 @@ export const projectData = [
     {
         title: 'Devon Swimming ASA Website',
         description: 'Custom WordPress redesign for Devon Swimming ASA, improving information architecture, accessibility, and responsive UX',
-        tech: ['WordPress', 'Figma', 'Accessibility', 'Freelance'],
+        tech: ['WordPress', 'Figma', 'PHP', 'Freelance'],
         image: '/images/projects/devon-swimming-600.webp',
         links: [
             { name: 'Live Site', url: 'https://devonswimming.org.uk' },
